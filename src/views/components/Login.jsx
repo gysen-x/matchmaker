@@ -1,6 +1,6 @@
 const React = require('react');
 
-export default function Login() {
+module.exports = function Login() {
   return (
     <div className="modal_window" id="modalLogin">
       <div className="modal_content">

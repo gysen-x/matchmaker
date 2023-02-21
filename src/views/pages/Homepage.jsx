@@ -1,5 +1,8 @@
-const React = require("react");
-const Layout = require("../components/Layout");
+const React = require('react');
+const CreateMatch = require('../components/CreateMatch');
+const Layout = require('../components/Layout');
+const Login = require('../components/Login');
+const Registration = require('../components/Registration');
 
 function Homepage() {
   return (
@@ -92,6 +95,11 @@ function Homepage() {
               неё единомышленников.
             </p>
           </div>
+        </div>
+        <div>
+          <CreateMatch />
+          <Registration />
+          <Login />
         </div>
       </>
     </Layout>
