@@ -1,6 +1,6 @@
 const React = require('react');
 
-export default function CreateMatch({ sports }) {
+module.exports = function CreateMatch() {
   return (
     <div className="modal_window">
       <div className="modal_content">
@@ -14,9 +14,9 @@ export default function CreateMatch({ sports }) {
                 <label htmlFor="sport_id">
                   Вид спорта:
                   <select className="form-control" name="sport_id" id="sport_id">
-                    {sports.map((el) => (
+                    {/* {sports.map((el) => (
                       <option value={el.id}>{el.title}</option>
-                    ))}
+                    ))} */}
                   </select>
                 </label>
               </div>

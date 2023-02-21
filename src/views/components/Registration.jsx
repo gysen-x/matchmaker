@@ -1,6 +1,6 @@
 const React = require('react');
 
-export default function Registration() {
+module.exports = function Registration() {
   return (
     <div className="modal_window" id="modalRegistration">
       <div className="modal_content">
