@@ -7,8 +7,8 @@ const Registration = require('../components/Registration');
 function Homepage({ user, sports }) {
   return (
     <Layout user={user}>
-      <>
-        <div className="table-row header" id="table_header" style={{ display: "none" }}>
+      <div className="wrapper">
+        <div className="table-row header" id="table_header" style={{ display: 'none' }}>
           {sports.map((sport) => (
             <div className="table-row__title">
               <h4 id={sport.id} key={sport.id}>{sport.title}</h4>
@@ -109,7 +109,7 @@ function Homepage({ user, sports }) {
           <Registration />
           <Login />
         </div>
-      </>
+      </div>
     </Layout>
   );
 }

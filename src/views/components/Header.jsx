@@ -3,7 +3,7 @@ const React = require('react');
 module.exports = function Header({ user }) {
   return (
     <header className="header">
-      <div className="container">
+      <div className="wrapper">
         <div className="nav">
           <ul className="nav__list">
             <li className="nav__item"><a id="createMatchLink" className="nav__link" href="#">Создать матч</a></li>
