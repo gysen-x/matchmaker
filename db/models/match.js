@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.User, { foreignKey: 'admin_id' });
-      this.belongsToMany(models.User, { through: models.Entry, foreignKey: 'match_id' }); // many to many through entries
+      this.belongsToMany(models.User, { through: models.Entry, foreignKey: 'match_id', as: 'players' }); // many to many through entries
     }
   }
   Match.init({
