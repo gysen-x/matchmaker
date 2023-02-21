@@ -5,6 +5,7 @@ const session = require("express-session");
 const morgan = require("morgan");
 const path = require("path");
 const FileStore = require("session-file-store")(session);
+
 const { PORT, SECRET_COOKIE } = process.env;
 
 const mainRouter = require("./routes/mainRouter");
@@ -27,7 +28,7 @@ const sessionConfig = {
   },
 };
 
-// app.use(session(sessionConfig));
+app.use(session(sessionConfig));
 
 app.use("/", mainRouter);
 

@@ -1,12 +1,12 @@
-const React = require('react');
-const CreateMatch = require('../components/CreateMatch');
-const Layout = require('../components/Layout');
-const Login = require('../components/Login');
-const Registration = require('../components/Registration');
+const React = require("react");
+const CreateMatch = require("../components/CreateMatch");
+const Layout = require("../components/Layout");
+const Login = require("../components/Login");
+const Registration = require("../components/Registration");
 
-function Homepage() {
+function Homepage({ user }) {
   return (
-    <Layout>
+    <Layout user={user}>
       <>
         <div className="cd-slider">
           <ul className="slider__list">
@@ -96,7 +96,7 @@ function Homepage() {
             </p>
           </div>
         </div>
-        <div>
+        <div id="hiddenContainer">
           <CreateMatch />
           <Registration />
           <Login />

@@ -12,7 +12,8 @@ const matchRouter = require("./matchRouter");
 const entryRouter = require("./entryRouter");
 
 route.get("/", (req, res) => {
-  renderComponent(Homepage, {}, res);
+  const user = req.session?.user;
+  renderComponent(Homepage, { user }, res);
 });
 route.use("/user", userRouter);
 route.use("/sport", sportRouter);
