@@ -7,7 +7,7 @@ class SportController {
   async showSports(req, res) {
     try {
       const sports = await Sport.findAll({ attributes: ['id', 'title'] });
-      res.json(sports);
+      return sports
     } catch (error) {
       console.log(error);
     }
