@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.hasMany(models.Match, { foreignKey: 'admin_id' });
-      this.belongsToMany(models.Match, { through: models.Entry, foreignKey: 'user_id' });
+      this.belongsToMany(models.Match, { through: models.Entry, foreignKey: 'user_id', as: 'players' });
     }
   }
   User.init({
