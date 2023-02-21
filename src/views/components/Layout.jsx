@@ -1,7 +1,7 @@
 const React = require('react');
 const Header = require('./Header');
 
-export default function Layout({ children }) {
+module.exports = function Layout({ children, user }) {
   return (
     <html lang="en">
       <head>
@@ -14,7 +14,7 @@ export default function Layout({ children }) {
         <script defer src="/js/slider.js" />
       </head>
       <body>
-        <Header />
+        <Header user={user}/>
         {children}
       </body>
     </html>

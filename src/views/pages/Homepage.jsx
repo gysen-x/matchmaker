@@ -1,5 +1,8 @@
 const React = require('react');
+const CreateMatch = require('../components/CreateMatch');
 const Layout = require('../components/Layout');
+const Login = require('../components/Login');
+const Registration = require('../components/Registration');
 
 module.exports = function Homepage() {
   return (
@@ -79,6 +82,11 @@ module.exports = function Homepage() {
               свою и пригласить на неё единомышленников.
             </p>
           </div>
+        </div>
+        <div>
+          <CreateMatch />
+          <Registration />
+          <Login />
         </div>
       </>
     </Layout>
