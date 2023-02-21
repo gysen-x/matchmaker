@@ -1,13 +1,21 @@
-const React = require("react");
-const CreateMatch = require("../components/CreateMatch");
-const Layout = require("../components/Layout");
-const Login = require("../components/Login");
-const Registration = require("../components/Registration");
+const React = require('react');
+const CreateMatch = require('../components/CreateMatch');
+const Layout = require('../components/Layout');
+const Login = require('../components/Login');
+const Registration = require('../components/Registration');
 
-function Homepage({ user }) {
+function Homepage({ user, sports }) {
   return (
     <Layout user={user}>
       <>
+        <div className="table-row header" id="table_header" style={{ display: "none" }}>
+          {sports.map((sport) => (
+            <div className="table-row__title">
+              <h4 id={sport.id} key={sport.id}>{sport.title}</h4>
+            </div>
+          ))}
+        </div>
+        <div id="table" style={{ display: 'none' }} />
         <div className="cd-slider">
           <ul className="slider__list">
             <li>
@@ -97,7 +105,7 @@ function Homepage({ user }) {
           </div>
         </div>
         <div id="hiddenContainer">
-          <CreateMatch />
+          <CreateMatch user={user} sports={sports} />
           <Registration />
           <Login />
         </div>

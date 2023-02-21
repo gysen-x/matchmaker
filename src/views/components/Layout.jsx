@@ -1,5 +1,5 @@
-const React = require("react");
-const Header = require("./Header");
+const React = require('react');
+const Header = require('./Header');
 
 module.exports = function Layout({ children, user }) {
   return (
@@ -13,6 +13,7 @@ module.exports = function Layout({ children, user }) {
         <link rel="stylesheet" href="/css/creatematch.css" />
         <script defer src="/js/client.js" />
         <script defer src="/js/slider.js" />
+        <script defer src="/js/createMatch.js" />
       </head>
       <body>
         <Header user={user} />

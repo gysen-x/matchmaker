@@ -9,6 +9,7 @@ class MatchController {
     const {
       sport_id, date, address, conditions, contacts, max_players, admin_id,
     } = req.body;
+    console.log(sport_id, date, address, conditions, contacts, max_players, admin_id);
     const currentDate = Date.now(); // 20.02.2023
     const inputDate = new Date(date); // 19.02.2023
     const difference = inputDate - currentDate;
@@ -20,14 +21,14 @@ class MatchController {
         sport_id, date, address, conditions, contacts, max_players, admin_id,
       });
       const newEntry = await Entry.create({ match_id: match.id, user_id: admin_id });
-      res.status(200).json(match);
+      res.json(match);
     } catch (error) {
       return res.status(404).json({ message: 'Invalid input' });
     }
   }
 
   async showAll(req, res) {
-    const { sport_id } = req.body;
+    const sport_id = req.body.sport_id || 2;
     try {
       const matches = await Match.findAll({ where: { sport_id }, include: 'players' });
       res.status(200).json(matches);

@@ -336,3 +336,60 @@ nav {
     right: auto;
   }
 }
+
+
+.g-wrapper {
+  display: grid;
+  grid-template-columns: 40px auto 40px;
+}
+
+.g-content {
+  grid-column-start: 2;
+}
+
+.g-card {
+  background-color: #c7c6c6;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 20px
+}
+
+.table-row {
+  display: grid;
+  grid-auto-flow: column;
+  padding: 10px 20px;
+}
+
+.table-row__title {
+  align-self: center;
+  width: 200px;
+}
+
+.table-row__data {
+  justify-self: end;
+  align-self: center;
+  width: 100px;
+}
+
+.thumbnail img {
+  width: 100px;
+  height: 100px;
+}
+
+.heart-button {
+  cursor: pointer;
+  justify-self: end;
+}
+
+.heart-button:focus {
+  outline: none;
+}
+
+.heart-button svg {
+  color: #bdbdbd;
+  margin-right: 5px;
+}
+
+.heart-button.active svg {
+  color: red;
+}

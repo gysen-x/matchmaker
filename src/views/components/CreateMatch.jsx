@@ -1,8 +1,8 @@
 const React = require('react');
 
-module.exports = function CreateMatch() {
+module.exports = function CreateMatch({ user, sports }) {
   return (
-    <div className="modal_window">
+    <div className="modal_window" id="modalCreateMatch">
       <div className="modal_content">
         <div className="card">
           <div className="card-header">
@@ -14,9 +14,9 @@ module.exports = function CreateMatch() {
                 <label htmlFor="sport_id">
                   Вид спорта:
                   <select className="form-control" name="sport_id" id="sport_id">
-                    {/* {sports.map((el) => (
-                      <option value={el.id}>{el.title}</option>
-                    ))} */}
+                    {sports.map((el) => (
+                      <option value={el.id} key={el.id}>{el.title}</option>
+                    ))}
                   </select>
                 </label>
               </div>
@@ -53,7 +53,7 @@ module.exports = function CreateMatch() {
               <div className="form-group" style={{ display: 'none' }}>
                 <label htmlFor="admin_id">
                   admin_id:
-                  <input required="" className="form-control" name="admin_id" id="admin_id" type="number" />
+                  <input required="" className="form-control" name="admin_id" id="admin_id" type="number" value={user.id} />
                 </label>
               </div>
               <input type="submit" className="btn" value="Создать" />
@@ -63,4 +63,4 @@ module.exports = function CreateMatch() {
       </div>
     </div>
   );
-}
+};
