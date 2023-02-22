@@ -32,7 +32,6 @@ class UserController {
       req.session.save();
       res.status(200).json({ message: 'Congratulations on successful registration' });
     } catch (error) {
-      console.log(error);
       return res.status(404).json({ message: 'Incorrect username or password' });
     }
   }
@@ -69,7 +68,7 @@ class UserController {
   async editPersonalInfo(req, res) {
     const { phoneNumber, userId } = req.body;
     if (!phoneNumber) {
-      res.status(404).json({ message: 'Invalid input' });
+      return res.status(404).json({ message: 'Invalid input' });
     }
     try {
       await User.update({ phoneNumber }, { where: { id: userId } });
