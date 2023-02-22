@@ -1,7 +1,21 @@
 const { createMatchForm } = document.forms;
 
+// const slider = document.querySelector('.cd-slider');
+// const table = document.getElementById('table');
+// const tableHeader = document.getElementById('table_header');
+// const userAccount = document.getElementById('user-account');
+// const userId = userAccount?.dataset?.userid;
+
 createMatchForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
+  const sportid = document.getElementById('sport_id').value;
+  const date = document.getElementById('date');
+  const dateEnd = document.getElementById('date_end');
+  const address = document.getElementById('address');
+  const conditions = document.getElementById('conditions');
+  const contacts = document.getElementById('contacts');
+  const maxPlayers = document.getElementById('max_players');
+
   const errorWrapper = createMatchForm.querySelector('.error-wrapper');
   const values = new FormData(createMatchForm);
   const data = Object.fromEntries(values);
@@ -13,11 +27,70 @@ createMatchForm?.addEventListener('submit', async (event) => {
     body: JSON.stringify(data),
   });
   const result = await response.json();
-  console.log(result);
   if (result.address) {
+    date.value = '';
+    dateEnd.value = '';
+    address.value = '';
+    conditions.value = '';
+    contacts.value = '';
+    maxPlayers.value = '';
     modalCreateMatch.style.display = 'none';
-    alert('Match created'); // modal push match created
+
+    // alert('Match created'); // modal push match created
+
+    const resp = await fetch('/match/bysport', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({ sport_id: sportid }),
+    });
+    const res = await resp.json();
+    table.style.gridTemplateRows = `repeat(${res.length}, 1fr)`;
+    table.innerHTML = `
+    <div class="table-row">
+    <div class="gridItem">Когда</div>
+ <div class="gridItem">Где</div>
+ <div class="gridItem">Условия участия</div>
+ <div class="gridItem">Контакты</div>
+ <div class="gridItem">Отозвались</div>
+ <div class="gridItem">Действия</div>
+ </div>
+${res.map((el, index) => (`
+<div class="table-row" data-matchid="${el.id}">
+<div class="table-row__data">
+   ${new Date(el.date).toISOString().replace(/T/, ' ').replace(/\..+/, '')
+      .slice(5, -3)}
+   <br />
+   ${new Date(el.date_end).toISOString().replace(/T/, ' ').replace(/\..+/, '')
+      .slice(5, -3)}
+ </div>
+ <div class="table-row__data">
+   ${el.address}
+ </div>
+<div class="table-row__data">
+ ${el.conditions}
+</div>
+<div class="table-row__data">
+ ${el.contacts}
+</div>
+<div class="table-row__data" data-matchcounter="${el.id}">
+ ${el.players.length}
+ / ${el.max_players}
+</div>
+${(Number(userId) === Number(el.admin_id)) ? (`
+<button class="delete-button">Удалить матч</button>
+`) : (`
+<button class="join-button">Принять участие</button>
+`)}
+<button class="cancel-button">Отменить</button>
+</div> 
+`)).join('')}`;
+
+    slider.style.display = 'none';
+    table.style.display = 'flex';
+    tableHeader.style.display = 'flex';
   } else {
-    errorWrapper.innerHTML = result.message;
+    errorWrapper.innerHTML = res.message;
   }
 });
