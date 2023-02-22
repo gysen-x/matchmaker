@@ -15,7 +15,7 @@ module.exports = function Header({ user }) {
             <li className="nav__item"><a className="nav__link" href="#">Контакты</a></li>
             {user ? (
               <>
-                <li className="nav__item"><a className="nav__link" href="#">{user.username}</a></li>
+                <li className="nav__item"><a id="user-account" className="nav__link" href="#" data-userid={user.id}>{user.username}</a></li>
                 <li className="nav__item"><a id="logoutLink" className="nav__link" href="#">Выход</a></li>
               </>
             ) : (
