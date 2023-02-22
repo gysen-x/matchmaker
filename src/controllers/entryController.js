@@ -59,15 +59,34 @@ class EntryController {
   async getEntry(req, res) {
     const { user_id } = req.body;
     try {
+      // const entryData = await Entry.findAll({
+      //   where: { user_id },
+      //   include: [
+      //     {
+      //       model: Match,
+      //       include: [{ model: Entry }],
+      //     },
+      //   ],
+      // });
+
       const entryData = await Match.findAll({
-        include: [
-          {
-            model: User,
-            where: { id: user_id },
-          },
-        ],
-        raw: true,
+        include: "players",
       });
+      console.log(entryData);
+
+      // const entryData = await Entry.findAll({
+      //   where: { user_id },
+      //   raw: true,
+      // });
+      // const obj = entryData[0];
+      // const { match_id } = obj;
+      // console.log(match_id);
+      // const allPlayers = await Entry.findAll({
+      //   where: { match_id },
+      //   raw: true,
+      // });
+      // console.log(allPlayers);
+
       res.json(entryData);
     } catch (error) {
       console.log(error);
