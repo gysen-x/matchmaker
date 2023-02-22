@@ -31,7 +31,7 @@ wrapperFindMatch?.addEventListener('click', async (event) => {
     <div class="table-row">
     <div class="gridItem">Когда</div>
  <div class="gridItem">Где</div>
- <div class="gridItem">Условия участия</div>
+ <div class="gridItem">Условия</div>
  <div class="gridItem">Контакты</div>
  <div class="gridItem">Отозвались</div>
  <div class="gridItem">Действия</div>
@@ -58,13 +58,15 @@ ${result.map((el, index) => (`
  ${el.players.length}
  / ${el.max_players}
 </div>
+<div class="button-wrapper">
 ${(Number(userId) === Number(el.admin_id)) ? (`
-<button class="delete-button">Удалить матч</button>
+<button class="delete-button table-button">Удалить матч</button>
 `) : (`
-<button class="join-button">Принять участие</button>
+<button class="join-button table-button">Принять участие</button>
 `)}
-<button class="cancel-button">Отменить</button>
+<button class="cancel-button table-button">Отменить</button>
 </div> 
+</div>
 `)).join('')}`;
 
     slider.style.display = 'none';
@@ -108,7 +110,7 @@ ulList?.addEventListener('click', async (event) => {
     <div class="table-row">
     <div class="gridItem">Когда</div>
  <div class="gridItem">Где</div>
- <div class="gridItem">Условия участия</div>
+ <div class="gridItem">Условия</div>
  <div class="gridItem">Контакты</div>
  <div class="gridItem">Отозвались</div>
  <div class="gridItem">Действия</div>
@@ -135,13 +137,15 @@ ${result.map((el, index) => (`
  ${el.players.length}
  / ${el.max_players}
 </div>
+<div class="button-wrapper">
 ${(Number(userId) === Number(el.admin_id)) ? (`
-<button class="delete-button">Удалить матч</button>
+<button class="delete-button table-button">Удалить матч</button>
 `) : (`
-<button class="join-button">Принять участие</button>
+<button class="join-button table-button">Принять участие</button>
 `)}
-<button class="cancel-button">Отменить</button>
+<button class="cancel-button table-button">Отменить</button>
 </div> 
+</div>
 `)).join('')}`;
 
     slider.style.display = 'none';
