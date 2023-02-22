@@ -1,5 +1,6 @@
 const React = require('react');
 const Header = require('./Header');
+const Footer = require('./Footer');
 
 module.exports = function Layout({ children, user }) {
   return (
@@ -18,6 +19,7 @@ module.exports = function Layout({ children, user }) {
       <body>
         <Header user={user} />
         {children}
+        <Footer />
       </body>
     </html>
   );
