@@ -412,6 +412,14 @@ nav {
   overflow-y: scroll;
 }
 
+.table-row:first-child {
+  position: sticky;
+  top: 0;
+  height: 64px;
+  background-color: #fff;
+  border-radius: 15px 15px 0px 0px;
+}
+
 .table-row {
   display: flex;
 }

@@ -2,6 +2,7 @@ const { createMatchForm } = document.forms;
 
 createMatchForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
+  const errorWrapper = createMatchForm.querySelector('.error-wrapper');
   const values = new FormData(createMatchForm);
   const data = Object.fromEntries(values);
   const response = await fetch('/match', {
@@ -15,8 +16,8 @@ createMatchForm?.addEventListener('submit', async (event) => {
   console.log(result);
   if (result.address) {
     modalCreateMatch.style.display = 'none';
-    alert('Match created'); //modal push match created
+    alert('Match created'); // modal push match created
   } else {
-    alert(result.message); 
+    errorWrapper.innerHTML = result.message;
   }
 });
