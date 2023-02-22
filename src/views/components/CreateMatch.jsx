@@ -22,8 +22,14 @@ module.exports = function CreateMatch({ user, sports }) {
               </div>
               <div className="form-group">
                 <label htmlFor="date">
-                  Когда:
+                  Время начала:
                   <input required="" className="form-control" name="date" id="date" type="datetime-local" />
+                </label>
+              </div>
+              <div className="form-group">
+                <label htmlFor="date_end">
+                  Время окончания:
+                  <input required="" className="form-control" name="date_end" id="date_end" type="datetime-local" />
                 </label>
               </div>
               <div className="form-group">
@@ -47,7 +53,7 @@ module.exports = function CreateMatch({ user, sports }) {
               <div className="form-group">
                 <label htmlFor="max_players">
                   Количество игроков:
-                  <input required="" className="form-control" name="max_players" id="max_players" type="number" />
+                  <input required="" className="form-control" name="max_players" id="max_players" type="number" min="0" max="1000" />
                 </label>
               </div>
               <div className="form-group" style={{ display: 'none' }}>
@@ -56,6 +62,7 @@ module.exports = function CreateMatch({ user, sports }) {
                   <input required="" className="form-control" name="admin_id" id="admin_id" type="number" value={user?.id} />
                 </label>
               </div>
+              <div className="error-wrapper" />
               <input type="submit" className="btn" value="Создать" />
             </form>
           </div>
