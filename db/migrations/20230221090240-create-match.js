@@ -21,6 +21,9 @@ module.exports = {
       date: {
         type: Sequelize.DATE,
       },
+      date_end: {
+        type: Sequelize.DATE,
+      },
       address: {
         type: Sequelize.STRING,
       },

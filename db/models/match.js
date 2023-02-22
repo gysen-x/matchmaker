@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   Match.init({
     sport_id: DataTypes.INTEGER,
     date: DataTypes.DATE,
+    date_end: DataTypes.DATE,
     address: DataTypes.STRING,
     conditions: DataTypes.STRING,
     contacts: DataTypes.STRING,
