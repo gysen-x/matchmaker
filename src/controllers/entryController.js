@@ -61,7 +61,7 @@ class EntryController {
         ],
         raw: true,
       });
-      res.json({ entryData });
+      res.json(entryData);
     } catch (error) {
       console.log(error);
     }

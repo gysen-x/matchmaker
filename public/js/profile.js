@@ -16,7 +16,37 @@ profileLink?.addEventListener("click", async (event) => {
     body: JSON.stringify({ user_id }),
   });
   const result = await response.json();
-  console.log("result", result);
-  const { entryData } = result;
-  console.log("entry_data", entryData[0]);
+  // const { entryData } = result;
+  // console.log("entryData", entryData);
+  profileEntries.innerHTML = `
+    <div class="table-row">
+    <div class="gridItem">Когда</div>
+ <div class="gridItem">Где</div>
+ <div class="gridItem">Условия участия</div>
+ <div class="gridItem">Контакты</div>
+ <div class="gridItem">Отозвались</div>
+ <div class="gridItem">Действия</div>
+ </div>
+${result
+  .map(
+    (el) => `
+<div class="table-row" data-match-id="${el.id}">
+<div class="table-row__data">
+   ${el.date}
+ </div>
+ <div class="table-row__data">
+   ${el.address}
+ </div>
+<div class="table-row__data">
+ ${el.conditions}
+</div>
+<div class="table-row__data">
+ ${el.contacts}
+</div>
+<button>Удалить матч</button>
+<button>Отменить</button>
+</div> 
+`
+  )
+  .join("")}`;
 });
