@@ -151,6 +151,7 @@ modalWindow?.addEventListener('click', (event) => {
 //! !Регистрация
 registrationForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
+  const errorWrapper = registrationForm.querySelector('.error-wrapper');
   try {
     const values = new FormData(registrationForm);
     const data = Object.fromEntries(values);
@@ -166,7 +167,7 @@ registrationForm?.addEventListener('submit', async (event) => {
       modalRegistration.style.display = 'none';
       window.location.href = '/';
     } else {
-      alert(result.message);
+      errorWrapper.innerHTML = result.message;
     }
   } catch (error) {
     console.error(error);
@@ -176,6 +177,7 @@ registrationForm?.addEventListener('submit', async (event) => {
 //! ! Реализуем вход пользователя
 loginForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
+  const errorWrapper = loginForm.querySelector('.error-wrapper');
   try {
     const values = new FormData(loginForm);
     const data = Object.fromEntries(values);
@@ -191,7 +193,7 @@ loginForm?.addEventListener('submit', async (event) => {
       modalLogin.style.display = 'none';
       window.location.href = '/';
     } else {
-      alert(result.message);
+      errorWrapper.innerHTML = result.message;
     }
   } catch (error) {
     console.log(error);

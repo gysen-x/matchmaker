@@ -23,11 +23,18 @@ module.exports = function Registration() {
                 </label>
               </div>
               <div className="form-group">
+                <label htmlFor="email">
+                  Phone number:
+                  <input className="form-control" name="phoneNumber" id="phoneNumber" type="text" placeholder="Необязательное поле" />
+                </label>
+              </div>
+              <div className="form-group">
                 <label htmlFor="password">
                   Пароль:
                   <input required="" className="form-control" name="password" id="password" type="password" />
                 </label>
               </div>
+              <div className="error-wrapper" />
               <input type="submit" className="btn" value="Принять" />
             </form>
           </div>
@@ -35,4 +42,4 @@ module.exports = function Registration() {
       </div>
     </div>
   );
-}
+};
