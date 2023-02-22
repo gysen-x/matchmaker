@@ -4,11 +4,13 @@ const Layout = require("../components/Layout");
 const Login = require("../components/Login");
 const Profile = require("../components/Profile");
 const Registration = require("../components/Registration");
+const Contacts = require("../components/Contacts");
 
 function Homepage({ user, sports }) {
   return (
     <Layout user={user}>
       <Profile user={user} />
+      <Contacts user={user} />
       <div className="wrapper findMatchListner">
         <div
           className="tableGrid"
