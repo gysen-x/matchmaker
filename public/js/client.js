@@ -11,6 +11,8 @@ const modalLogin = document.getElementById('modalLogin');
 const modalCreateMatch = document.getElementById('modalCreateMatch');
 
 const wrapperFindMatch = document.querySelector('.findMatchListner');
+const userAccount = document.getElementById('user-account');
+const userId = userAccount?.dataset?.userid;
 
 wrapperFindMatch?.addEventListener('click', async (event) => {
   if (event.target.dataset.findmatch === 'findMatch') {
@@ -25,33 +27,45 @@ wrapperFindMatch?.addEventListener('click', async (event) => {
     });
     const result = await response.json();
     table.style.gridTemplateRows = `repeat(${result.length}, 1fr)`;
-    table.innerHTML = `<div style="grid-area: 1 / 1" class="gridItem">
-          Когда</div>
-       <div style="grid-area: 1 / 2" class="gridItem">Где</div>
-       <div style="grid-area: 1 / 3" class="gridItem">Условия участия</div>
-       <div style="grid-area: 1 / 4" class="gridItem">Контакты</div>
-       <div style="grid-area: 1 / 5" class="gridItem">Отозвались</div>
-  ${result.map((el, index) => (`<div style="grid-area: ${index + 2} / 1" class="table-row__data">
-         ${el.date}
-       </div>
-       <div style="grid-area: ${index + 2} / 2" class="table-row__data">
-         ${el.address}
-       </div>
-     <div style="grid-area: ${index + 2} / 3" class="table-row__data">
-       ${el.conditions}
-     </div>
-     <div style="grid-area: ${index + 2} / 4" class="table-row__data">
-       ${el.contacts}
-     </div>
-     <div style="grid-area: ${index + 2} / 5" class="table-row__data">
-       ${el.players.length}
-       /${el.max_players}
-     </div>
+    table.innerHTML = `
+    <div class="table-row">
+    <div class="gridItem">Когда</div>
+ <div class="gridItem">Где</div>
+ <div class="gridItem">Условия участия</div>
+ <div class="gridItem">Контакты</div>
+ <div class="gridItem">Отозвались</div>
+ <div class="gridItem">Действия</div>
+ </div>
+${result.map((el, index) => (`
+<div class="table-row" data-match-id="${el.id}">
+<div class="table-row__data">
+   ${el.date}
+ </div>
+ <div class="table-row__data">
+   ${el.address}
+ </div>
+<div class="table-row__data">
+ ${el.conditions}
+</div>
+<div class="table-row__data">
+ ${el.contacts}
+</div>
+<div class="table-row__data">
+ ${el.players.length}
+ /${el.max_players}
+</div>
+${(Number(userId) === Number(el.admin_id)) ? (`
+<button>Удалить матч</button>
+`) : (`
+<button>Принять участие</button>
+`)}
+<button>Отменить</button>
+</div> 
 `)).join('')}`;
 
     slider.style.display = 'none';
-    table.style.display = 'grid';
-    tableHeader.style.display = 'grid';
+    table.style.display = 'flex';
+    tableHeader.style.display = 'flex';
   }
 });
 
@@ -86,33 +100,45 @@ ulList?.addEventListener('click', async (event) => {
     });
     const result = await response.json();
     table.style.gridTemplateRows = `repeat(${result.length}, 1fr)`;
-    table.innerHTML = `<div style="grid-area: 1 / 1" class="gridItem">
-            Когда</div>
-         <div style="grid-area: 1 / 2" class="gridItem">Где</div>
-         <div style="grid-area: 1 / 3" class="gridItem">Условия участия</div>
-         <div style="grid-area: 1 / 4" class="gridItem">Контакты</div>
-         <div style="grid-area: 1 / 5" class="gridItem">Отозвались</div>
-    ${result.map((el, index) => (`<div style="grid-area: ${index + 2} / 1" class="table-row__data">
-           ${el.date}
-         </div>
-         <div style="grid-area: ${index + 2} / 2" class="table-row__data">
-           ${el.address}
-         </div>
-       <div style="grid-area: ${index + 2} / 3" class="table-row__data">
-         ${el.conditions}
-       </div>
-       <div style="grid-area: ${index + 2} / 4" class="table-row__data">
-         ${el.contacts}
-       </div>
-       <div style="grid-area: ${index + 2} / 5" class="table-row__data">
-         ${el.players.length}
-         /${el.max_players}
-       </div>
- `)).join('')}`;
+    table.innerHTML = `
+    <div class="table-row">
+    <div class="gridItem">Когда</div>
+ <div class="gridItem">Где</div>
+ <div class="gridItem">Условия участия</div>
+ <div class="gridItem">Контакты</div>
+ <div class="gridItem">Отозвались</div>
+ <div class="gridItem">Действия</div>
+ </div>
+${result.map((el, index) => (`
+<div class="table-row" data-match-id="${el.id}">
+<div class="table-row__data">
+   ${el.date}
+ </div>
+ <div class="table-row__data">
+   ${el.address}
+ </div>
+<div class="table-row__data">
+ ${el.conditions}
+</div>
+<div class="table-row__data">
+ ${el.contacts}
+</div>
+<div class="table-row__data">
+ ${el.players.length}
+ /${el.max_players}
+</div>
+${(Number(userId) === Number(el.admin_id)) ? (`
+<button>Удалить матч</button>
+`) : (`
+<button>Принять участие</button>
+`)}
+<button>Отменить</button>
+</div> 
+`)).join('')}`;
 
     slider.style.display = 'none';
-    table.style.display = 'grid';
-    tableHeader.style.display = 'grid';
+    table.style.display = 'flex';
+    tableHeader.style.display = 'flex';
   }
 });
 
