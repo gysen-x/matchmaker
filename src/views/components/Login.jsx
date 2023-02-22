@@ -22,6 +22,7 @@ module.exports = function Login() {
                   <input required="" className="form-control" name="password" id="password" type="password" />
                 </label>
               </div>
+              <div className="error-wrapper" />
               <input type="submit" className="btn" value="Принять" />
             </form>
           </div>
@@ -29,4 +30,4 @@ module.exports = function Login() {
       </div>
     </div>
   );
-}
+};

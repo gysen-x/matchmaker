@@ -432,3 +432,13 @@ nav {
   font-size: 18px;
   font-weight: bold;
 }
+
+
+/* Error 
+------------------------------------*/
+
+.error-wrapper {
+  margin-bottom: 20px;
+  color: crimson;
+  opacity: 0.8;
+}
