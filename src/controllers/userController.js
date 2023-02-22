@@ -6,7 +6,9 @@ const { User } = require('../../db/models');
 
 class UserController {
   async registration(req, res) {
-    const { username, email, password } = req.body;
+    const {
+      username, email, password, phoneNumber,
+    } = req.body;
     if (!username || !email || !password) {
       return res.status(404).json({ message: 'Invalid input' });
     }
@@ -17,6 +19,14 @@ class UserController {
         return res.status(404).json({ message: 'Username or Email already exists' });
       }
       const hashPassword = await bcrypt.hash(password, 10);
+      if (phoneNumber) {
+        const user = await User.create({
+          username, email, password: hashPassword, phoneNumber,
+        });
+        req.session.user = { id: user.id, email: user.email, username: user.username };
+        req.session.save();
+        return res.status(200).json({ message: 'Congratulations on successful registration' });
+      }
       const user = await User.create({ username, email, password: hashPassword });
       req.session.user = { id: user.id, email: user.email, username: user.username };
       req.session.save();
@@ -54,6 +64,20 @@ class UserController {
       res.clearCookie('NewCookie');
       res.redirect('/');
     });
+  }
+
+  async editPersonalInfo(req, res) {
+    const { phoneNumber, userId } = req.body;
+    if (!phoneNumber) {
+      res.status(404).json({ message: 'Invalid input' });
+    }
+    try {
+      await User.update({ phoneNumber }, { where: { id: userId } });
+      const user = await User.findOne({ where: { id: userId }, attributes: ['id', 'username', 'email', 'phoneNumber'] });
+      res.json(user);
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
 
