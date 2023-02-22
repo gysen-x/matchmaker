@@ -5,6 +5,21 @@
 const { Entry, Match } = require('../../db/models');
 
 class EntryController {
+  async getEntry(req, res) {
+    const { user_id } = req.body;
+    try {
+      const entryData = await Match.findAll({
+        where: { user_id },
+        include: {
+          model: Match,
+        },
+      });
+      res.json(entryData);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   async addEntry(req, res) {
     const { user_id, match_id } = req.body;
     try {
