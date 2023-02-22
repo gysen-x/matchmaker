@@ -8,14 +8,12 @@ function Homepage({ user, sports }) {
   return (
     <Layout user={user}>
       <div className="wrapper">
-        <div className="table-row header" id="table_header" style={{ display: 'none' }}>
-          {sports.map((sport) => (
-            <div className="table-row__title">
-              <h4 id={sport.id} key={sport.id}>{sport.title}</h4>
-            </div>
-          ))}
-        </div>
-        <div id="table" style={{ display: 'none' }} />
+      <div className="tableGrid" id="table_header" style={{ gridTemplateColumns: `repeat(${sports.length}, 1fr)`,  display: 'none' }}>
+        {sports?.map((sport, index) => (
+          <h4 style={{ gridArea: `1 / ${index + 1}` }} className="headerSports" id={sport.id} key={sport.id}>{sport.title}</h4>
+        ))}
+      </div>
+      <div id="table" className="tableGrid" style={{ gridTemplateColumns: 'repeat(5, 1fr)', display: 'none' }} />
         <div className="cd-slider">
           <ul className="slider__list">
             <li>
