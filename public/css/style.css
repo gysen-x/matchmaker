@@ -366,10 +366,14 @@ nav {
 }
 
 .table-row__data {
-  justify-self: end;
+  justify-self: start;
   align-self: center;
-  width: 100px;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  padding: 10px;
 }
+
 
 .thumbnail img {
   width: 100px;
@@ -392,4 +396,28 @@ nav {
 
 .heart-button.active svg {
   color: red;
+}
+
+.tableGrid {
+  display:grid;
+  border: 1px solid black;
+border-radius: 15px;
+margin-bottom: 20px;
+}
+
+.gridItem {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.headerSports {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: bold;
 }

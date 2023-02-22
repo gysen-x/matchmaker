@@ -53,7 +53,7 @@ module.exports = function CreateMatch({ user, sports }) {
               <div className="form-group" style={{ display: 'none' }}>
                 <label htmlFor="admin_id">
                   admin_id:
-                  <input required="" className="form-control" name="admin_id" id="admin_id" type="number" value={user.id} />
+                  <input required="" className="form-control" name="admin_id" id="admin_id" type="number" value={user?.id} />
                 </label>
               </div>
               <input type="submit" className="btn" value="Создать" />

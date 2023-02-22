@@ -8,6 +8,8 @@
 
 .modal_window {
   display: none;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   z-index: 8;
   left: 0;
@@ -22,9 +24,7 @@
 }
 
 .modal_content {
-  margin: 50px auto;
-  max-width: 500px;
-  width: 60%;
+  max-width: 350px;
 }
 
 .card-header {
@@ -38,7 +38,17 @@
   font-size: 18px;
   color: rgb(255, 255, 255);
 }
+.form-control {
+  height: 40px;
+}
 
+select.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 .card-body {
   padding: 16px;
   display: flex;
@@ -55,6 +65,7 @@
 
 .form-group {
   margin-bottom: 10px;
+  width: 100%;
 }
 
 .form-group label {

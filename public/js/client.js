@@ -16,13 +16,13 @@ ulList?.addEventListener('click', async (event) => {
     window.location.replace('/');
   }
   if (event.target.id === 'regLink') {
-    modalRegistration.style.display = 'block';
+    modalRegistration.style.display = 'flex';
   }
   if (event.target.id === 'loginLink') {
-    modalLogin.style.display = 'block';
+    modalLogin.style.display = 'flex';
   }
   if (event.target.id === 'createMatchLink') {
-    modalCreateMatch.style.display = 'block';
+    modalCreateMatch.style.display = 'flex';
   }
   if (event.target.id === 'logoutLink') {
     await fetch('/user/logout');
@@ -36,43 +36,33 @@ ulList?.addEventListener('click', async (event) => {
       body: JSON.stringify(),
     });
     const result = await response.json();
-    table.innerHTML = `<div class="wrapper">
-    <div class="table-row header">
-      <div class="table-row__title">
-        <h4>Когда</h4>
-      </div>
-      <div class="table-row__data">Где</div>
-      <div class="table-row__data">Условия участия</div>
-      <div class="table-row__data">Контакты</div>
-      <div class="table-row__data">Отозвались</div>
-    </div>
-    ${result.map((el) => (`
-      <div class="table-row g-card">
-        <div class="table-row__title">
-          <h5>
-            ${el.date}
-          </h5>
-        </div>
-        <div class="table-row__data">
-          <span class="label primary">
-            ${el.address}
-          </span>
-        </div>
-        <div class="table-row__data">
-          ${el.conditions}
-        </div>
-        <div class="table-row__data">
-          ${el.contacts}
-        </div>
-        <div class="table-row__data">
-          ${el.players.length}
-          /${el.max_players}
-        </div>
-      </div>
-  `))}
-</div>`;
+    table.style.gridTemplateRows = `repeat(${result.length}, 1fr)`;
+    table.innerHTML = `<div style="grid-area: 1 / 1" class="gridItem">
+            Когда</div>
+         <div style="grid-area: 1 / 2" class="gridItem">Где</div>
+         <div style="grid-area: 1 / 3" class="gridItem">Условия участия</div>
+         <div style="grid-area: 1 / 4" class="gridItem">Контакты</div>
+         <div style="grid-area: 1 / 5" class="gridItem">Отозвались</div>
+    ${result.map((el, index) => (`<div style="grid-area: ${index + 2} / 1" class="table-row__data">
+           ${el.date}
+         </div>
+         <div style="grid-area: ${index + 2} / 2" class="table-row__data">
+           ${el.address}
+         </div>
+       <div style="grid-area: ${index + 2} / 3" class="table-row__data">
+         ${el.conditions}
+       </div>
+       <div style="grid-area: ${index + 2} / 4" class="table-row__data">
+         ${el.contacts}
+       </div>
+       <div style="grid-area: ${index + 2} / 5" class="table-row__data">
+         ${el.players.length}
+         /${el.max_players}
+       </div>
+ `)).join('')}`
+
     slider.style.display = 'none';
-    table.style.display = 'block';
+    table.style.display = 'grid';
     tableHeader.style.display = 'grid';
   }
 });
