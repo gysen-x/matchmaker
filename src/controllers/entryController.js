@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable consistent-return */
 /* eslint-disable linebreak-style */
@@ -41,6 +42,12 @@ class EntryController {
         await Entry.destroy({ where: { user_id, match_id } });
         await Match.destroy({ where: { id: match_id } });
         res.status(200).json({ message: "Entry and Match has been deleted" });
+        return res.status(200).json({ message: 'Entry and Match has been deleted' });
+      }
+      if (+match.admin_id === +user_id) {
+        const deleteAdmin = activePlayers.filter((el) => el !== user_id);
+        await Match.update({ admin_id: deleteAdmin[0] }, { where: { id: match_id, admin_id: user_id } });
+        return res.json({ message: 'admin replaced' });
       }
       await Entry.destroy({ where: { user_id, match_id } });
       res.status(200).json({ message: "Your match request has been deleted" });
