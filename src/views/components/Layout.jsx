@@ -1,5 +1,5 @@
-const React = require('react');
-const Header = require('./Header');
+const React = require("react");
+const Header = require("./Header");
 
 module.exports = function Layout({ children, user }) {
   return (
@@ -14,6 +14,7 @@ module.exports = function Layout({ children, user }) {
         <script defer src="/js/client.js" />
         <script defer src="/js/slider.js" />
         <script defer src="/js/createMatch.js" />
+        <script defer src="/js/profile.js" />
       </head>
       <body>
         <Header user={user} />

@@ -109,3 +109,5 @@ a?.addEventListener("click", async (event) => {
     console.log(e);
   }
 });
+
+//!! Пост - id user и id
