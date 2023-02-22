@@ -39,7 +39,11 @@ wrapperFindMatch?.addEventListener('click', async (event) => {
 ${result.map((el, index) => (`
 <div class="table-row" data-match-id="${el.id}">
 <div class="table-row__data">
-   ${el.date}
+   ${new Date(el.date).toISOString().replace(/T/, ' ').replace(/\..+/, '')
+      .slice(5, -3)}
+   <br />
+   ${new Date(el.date_end).toISOString().replace(/T/, ' ').replace(/\..+/, '')
+      .slice(5, -3)}
  </div>
  <div class="table-row__data">
    ${el.address}
@@ -112,7 +116,11 @@ ulList?.addEventListener('click', async (event) => {
 ${result.map((el, index) => (`
 <div class="table-row" data-match-id="${el.id}">
 <div class="table-row__data">
-   ${el.date}
+   ${new Date(el.date).toISOString().replace(/T/, ' ').replace(/\..+/, '')
+      .slice(5, -3)}
+   <br />
+   ${new Date(el.date_end).toISOString().replace(/T/, ' ').replace(/\..+/, '')
+      .slice(5, -3)}
  </div>
  <div class="table-row__data">
    ${el.address}
