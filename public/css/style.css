@@ -462,7 +462,7 @@ nav {
   align-self: center;
   width: 16%;
   height: 100%;
-  font-size: 18px;
+  font-size: 12px;
   padding: 10px;
 }
 
@@ -516,7 +516,7 @@ nav {
   padding: 10px;
   width: 16%;
   height: 100%;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -564,7 +564,7 @@ nav {
 .contacts-container {
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .contacts {
@@ -574,7 +574,7 @@ nav {
   border: 1px solid black;
   padding: 10px;
   border-radius: 20px;
-
+  margin-bottom: 30px;
 }
 
 .contacts__left {
@@ -646,6 +646,26 @@ nav {
   border: none;
 }
 
+.contacts__list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contacts__link-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts__title {
+  font-size: 29px;
+  margin-bottom: 10px;
+}
+
+.container {
+  width: 80%;
+}
+
 /* Find match
 ------------------------------------*/
 
@@ -704,6 +724,12 @@ nav {
 .tournament {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.tournament__title {
+  margin-bottom: 20px;
+  font-size: 40px;
 }
 
 .tournament__list {
@@ -713,11 +739,43 @@ nav {
 
 .tournament__item {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .tournament__column {
   display: flex;
   flex-direction: column;
+}
+
+.tournament__text {
+  font-size: 20px;
+}
+
+.tournament__button {
+  width: 100px;
+  height: 30px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.tournament__button:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.tournament__button:hover {
+  background-color: black;
+  color: white;
 }
 
 .table-button:hover {
