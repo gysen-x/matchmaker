@@ -7,7 +7,7 @@ const { User } = require('../../db/models');
 class UserController {
   async registration(req, res) {
     const {
-      username, email, password, phoneNumber,
+      username, email, password, phoneNumber, gender, age,
     } = req.body;
     if (!username || !email || !password) {
       return res.status(404).json({ message: 'Invalid input' });
@@ -21,13 +21,13 @@ class UserController {
       const hashPassword = await bcrypt.hash(password, 10);
       if (phoneNumber) {
         const user = await User.create({
-          username, email, password: hashPassword, phoneNumber,
+          username, email, password: hashPassword, gender, age, phoneNumber 
         });
         req.session.user = { id: user.id, email: user.email, username: user.username };
         req.session.save();
         return res.status(200).json({ message: 'Congratulations on successful registration' });
       }
-      const user = await User.create({ username, email, password: hashPassword });
+      const user = await User.create({ username, email, password: hashPassword, gender, age });
       req.session.user = { id: user.id, email: user.email, username: user.username };
       req.session.save();
       res.status(200).json({ message: 'Congratulations on successful registration' });

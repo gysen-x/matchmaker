@@ -20,16 +20,28 @@ profileLink?.addEventListener("click", async (event) => {
     // console.log("entryData", entryData);
     profileEntries.innerHTML = `
       <div class="table-row">
+      <div class="gridItem">Вид спорта</div>
       <div class="gridItem">Когда</div>
-   <div class="gridItem">Где</div>
-   <div class="gridItem">Кол-во игроков</div>
-   </div>
+      <div class="gridItem">Страна</div>
+      <div class="gridItem">Город</div>
+      <div class="gridItem">Адрес</div>
+      <div class="gridItem">Кол-во игроков</div>
+      </div>
   ${result
     .map(
       (el) => `
   <div class="table-row" data-match-id="${el.id}">
   <div class="table-row__data">
+     ${el.game}
+   </div>
+  <div class="table-row__data">
      ${el.date}
+   </div>
+   <div class="table-row__data">
+     ${el.country}
+   </div>
+   <div class="table-row__data">
+     ${el.city}
    </div>
    <div class="table-row__data">
      ${el.address}
