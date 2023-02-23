@@ -26,6 +26,8 @@ table?.addEventListener('click', async (event) => {
     console.log('result: ', result);
     if (result.message === 'Entry and Match has been deleted') {
       event.target.closest('.table-row').remove();
+    } else if (result.message === 'You didnt book here') {
+      alert(result.message);
     } else {
       const counterCell = event.target.closest('.table-row').querySelector(`[data-matchcounter="${match_id}"]`);
       console.log('counterCell: ', counterCell.innerText.split('/'));
