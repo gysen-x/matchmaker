@@ -1,7 +1,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Matches', {
+    await queryInterface.createTable("Matches", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,12 +11,15 @@ module.exports = {
       sport_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Sports',
-          key: 'id',
+          model: "Sports",
+          key: "id",
         },
         allowNull: false,
-        onDelete: 'cascade',
-        onUpdate: 'cascade',
+        onDelete: "cascade",
+        onUpdate: "cascade",
+      },
+      game: {
+        type: Sequelize.STRING,
       },
       date: {
         type: Sequelize.DATE,
@@ -24,6 +27,8 @@ module.exports = {
       date_end: {
         type: Sequelize.DATE,
       },
+      country: { type: Sequelize.STRING },
+      city: { type: Sequelize.STRING },
       address: {
         type: Sequelize.STRING,
       },
@@ -39,12 +44,12 @@ module.exports = {
       admin_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Users',
-          key: 'id',
+          model: "Users",
+          key: "id",
         },
         allowNull: false,
-        onDelete: 'cascade',
-        onUpdate: 'cascade',
+        onDelete: "cascade",
+        onUpdate: "cascade",
       },
       createdAt: {
         allowNull: false,
@@ -57,6 +62,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Matches');
+    await queryInterface.dropTable("Matches");
   },
 };
