@@ -24,8 +24,23 @@ module.exports = function Registration() {
               </div>
               <div className="form-group">
                 <label htmlFor="email">
-                  Phone number:
+                  Телефон:
                   <input className="form-control" name="phoneNumber" id="phoneNumber" type="text" placeholder="Необязательное поле" />
+                </label>
+              </div>
+              <div className="form-group">
+                <label htmlFor="gender">
+                  Пол:
+                  <select className="form-control" name="gender" id="gender">
+                    <option value="муж">Муж</option>
+                    <option value="муж">Жен</option>
+                  </select>
+                </label>
+              </div>
+              <div className="form-group">
+                <label htmlFor="age">
+                  Возраст:
+                  <input className="form-control" name="age" id="age" type="number" />
                 </label>
               </div>
               <div className="form-group">
