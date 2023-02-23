@@ -1,16 +1,16 @@
-const contactsLink = document.getElementById('contactsLink');
-console.log('contactsLink', contactsLink);
-const contactsContainer = document.querySelector('.contacts-container');
-console.log('contactsContainer', contactsContainer);
-const contactsMap = document.getElementById('contactsMap');
-console.log('contactsMap', contactsMap);
+const contactsLink = document.getElementById("contactsLink");
+console.log("contactsLink", contactsLink);
+const contactsContainer = document.querySelector(".contacts-container");
+console.log("contactsContainer", contactsContainer);
+const contactsMap = document.getElementById("contactsMap");
+console.log("contactsMap", contactsMap);
 
-contactsLink?.addEventListener('click', (event) => {
+contactsLink?.addEventListener("click", (event) => {
   event.preventDefault();
-  contactsContainer.style.display = 'flex';
-  document.querySelector('.findMatchListner').style.display = 'none';
-  document.querySelector('.profile-container').style.display = 'none';
-  document.querySelector('.tournaments-container').style.display = 'none';
+  contactsContainer.style.display = "flex";
+  document.querySelector(".findMatchListner").style.display = "none";
+  document.querySelector(".profile-container").style.display = "none";
+  document.querySelector(".tournaments-container").style.display = "none";
   contactsMap.innerHTML = `
   <iframe 
   class="contacts__iframe"

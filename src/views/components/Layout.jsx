@@ -1,6 +1,6 @@
-const React = require('react');
-const Header = require('./Header');
-const Footer = require('./Footer');
+const React = require("react");
+const Header = require("./Header");
+const Footer = require("./Footer");
 
 module.exports = function Layout({ children, user }) {
   return (
@@ -12,6 +12,7 @@ module.exports = function Layout({ children, user }) {
         <title>Matchmaker</title>
         <link rel="stylesheet" href="/css/style.css" />
         <link rel="stylesheet" href="/css/creatematch.css" />
+        <script defer src="/js/utils.js" />
         <script defer src="/js/client.js" />
         <script defer src="/js/slider.js" />
         <script defer src="/js/createMatch.js" />
@@ -19,6 +20,7 @@ module.exports = function Layout({ children, user }) {
         <script defer src="/js/tableMatch.js" />
         <script defer src="/js/contacts.js" />
         <script defer src="/js/tournament.js" />
+        <script defer src="/js/search.js" />
       </head>
       <body>
         <Header user={user} />
