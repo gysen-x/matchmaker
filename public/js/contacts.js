@@ -6,11 +6,11 @@ const contactsMap = document.getElementById('contactsMap');
 console.log('contactsMap', contactsMap);
 
 contactsLink?.addEventListener('click', (event) => {
-
   event.preventDefault();
   contactsContainer.style.display = 'flex';
   document.querySelector('.findMatchListner').style.display = 'none';
   document.querySelector('.profile-container').style.display = 'none';
+  document.querySelector('.tournaments-container').style.display = 'none';
   contactsMap.innerHTML = `
   <iframe 
   class="contacts__iframe"

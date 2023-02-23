@@ -130,8 +130,14 @@ function Homepage({ user, sports }) {
         </div>
         <div id="hiddenContainer">
           <CreateMatch user={user} sports={sports} />
-          <Registration />
-          <Login />
+          { user ? (
+            ''
+          ) : (
+            <>
+              <Registration />
+              <Login />
+            </>
+          )}
           <Confirm />
         </div>
       </div>

@@ -59,21 +59,33 @@ createMatchForm?.addEventListener('submit', async (event) => {
     const res = await resp.json();
     table.innerHTML = `
     <div class="table-row">
+    <div class="gridItem">Игра</div>
     <div class="gridItem">Когда</div>
- <div class="gridItem">Где</div>
+    <div class="gridItem">Страна</div>
+    <div class="gridItem">Город</div>
+ <div class="gridItem">Адрес</div>
  <div class="gridItem">Условия</div>
  <div class="gridItem">Контакты</div>
  <div class="gridItem">Отозвались</div>
  <div class="gridItem">Действия</div>
  </div>
-${result.map((el, index) => (`
+${res.map((el, index) => (`
 <div class="table-row" data-matchid="${el.id}">
+<div class="table-row__data">
+${el.game}
+</div>
 <div class="table-row__data">
    ${new Date(el.date).toISOString().replace(/T/, ' ').replace(/\..+/, '')
       .slice(5, -3)}
    <br />
    ${new Date(el.date_end).toISOString().replace(/T/, ' ').replace(/\..+/, '')
       .slice(5, -3)}
+ </div>
+ <div class="table-row__data">
+   ${el.country}
+ </div>
+ <div class="table-row__data">
+   ${el.city}
  </div>
  <div class="table-row__data">
    ${el.address}
@@ -98,20 +110,23 @@ ${(Number(userId) === Number(el.admin_id)) ? (`
 </div> 
 </div>
 `)).join('')}`;
-    if (result.length === 0) {
+    if (res.length === 0) {
       table.innerHTML = `
-<div class="table-row">
-<div class="gridItem">Когда</div>
-<div class="gridItem">Где</div>
-<div class="gridItem">Условия</div>
-<div class="gridItem">Контакты</div>
-<div class="gridItem">Отозвались</div>
-<div class="gridItem">Действия</div>
-</div>
-<div class="table-row">
-<p class="nomatch-paragraph">В настоящее время не создано ни одного матча</p>
-<button id="nomatch-button" class="nomatch-button">Создать матч</button>
-</div>
+      <div class="table-row">
+      <div class="gridItem">Игра</div>
+      <div class="gridItem">Когда</div>
+      <div class="gridItem">Страна</div>
+      <div class="gridItem">Город</div>
+      <div class="gridItem">Адрес</div>
+      <div class="gridItem">Условия</div>
+      <div class="gridItem">Контакты</div>
+      <div class="gridItem">Отозвались</div>
+      <div class="gridItem">Действия</div>
+      </div>
+      <div class="table-row">
+      <p class="nomatch-paragraph">В настоящее время не создано ни одного матча</p>
+      <button id="nomatch-button" class="nomatch-button">Создать матч</button>
+      </div>
 `;
     }
 

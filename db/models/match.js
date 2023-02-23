@@ -1,4 +1,4 @@
-const { Model } = require("sequelize");
+const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Match extends Model {
@@ -8,11 +8,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.User, { foreignKey: "admin_id" });
+      this.belongsTo(models.User, { foreignKey: 'admin_id' });
       this.belongsToMany(models.User, {
         through: models.Entry,
-        foreignKey: "match_id",
-        as: "players",
+        foreignKey: 'match_id',
+        as: 'players',
       }); // many to many through entries
     }
   }
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       game: DataTypes.INTEGER,
       date: DataTypes.DATE,
       date_end: DataTypes.DATE,
-      contry: DataTypes.STRING,
+      country: DataTypes.STRING,
       city: DataTypes.STRING,
       address: DataTypes.STRING,
       conditions: DataTypes.STRING,
@@ -32,8 +32,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "Match",
-    }
+      modelName: 'Match',
+    },
   );
   return Match;
 };

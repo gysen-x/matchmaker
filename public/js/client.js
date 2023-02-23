@@ -16,6 +16,13 @@ const userId = userAccount?.dataset?.userid;
 const noMatchButton = document.getElementById('nomatch-button');
 
 wrapperFindMatch?.addEventListener('click', async (event) => {
+  if (event.target.id === 'nomatch-button') {
+    if (userId) {
+      document.getElementById('createMatchLink').click();
+    } else {
+      document.getElementById('loginLink').click();
+    }
+  }
   if (event.target.dataset.findmatch === 'findMatch') {
     event.preventDefault();
     const sportid = Number(event.target.dataset.sportid);
@@ -30,8 +37,11 @@ wrapperFindMatch?.addEventListener('click', async (event) => {
 
     table.innerHTML = `
     <div class="table-row">
+    <div class="gridItem">Игра</div>
     <div class="gridItem">Когда</div>
- <div class="gridItem">Где</div>
+    <div class="gridItem">Страна</div>
+    <div class="gridItem">Город</div>
+ <div class="gridItem">Адрес</div>
  <div class="gridItem">Условия</div>
  <div class="gridItem">Контакты</div>
  <div class="gridItem">Отозвались</div>
@@ -40,11 +50,20 @@ wrapperFindMatch?.addEventListener('click', async (event) => {
 ${result.map((el, index) => (`
 <div class="table-row" data-matchid="${el.id}">
 <div class="table-row__data">
+${el.game}
+</div>
+<div class="table-row__data">
    ${new Date(el.date).toISOString().replace(/T/, ' ').replace(/\..+/, '')
       .slice(5, -3)}
    <br />
    ${new Date(el.date_end).toISOString().replace(/T/, ' ').replace(/\..+/, '')
       .slice(5, -3)}
+ </div>
+ <div class="table-row__data">
+   ${el.country}
+ </div>
+ <div class="table-row__data">
+   ${el.city}
  </div>
  <div class="table-row__data">
    ${el.address}
@@ -71,29 +90,23 @@ ${(Number(userId) === Number(el.admin_id)) ? (`
 `)).join('')}`;
     if (result.length === 0) {
       table.innerHTML = `
-<div class="table-row">
-<div class="gridItem">Когда</div>
-<div class="gridItem">Где</div>
-<div class="gridItem">Условия</div>
-<div class="gridItem">Контакты</div>
-<div class="gridItem">Отозвались</div>
-<div class="gridItem">Действия</div>
-</div>
-<div class="table-row">
-<p class="nomatch-paragraph">В настоящее время не создано ни одного матча</p>
-<button id="nomatch-button" class="nomatch-button">Создать матч</button>
-</div>
+      <div class="table-row">
+      <div class="gridItem">Игра</div>
+      <div class="gridItem">Когда</div>
+      <div class="gridItem">Страна</div>
+      <div class="gridItem">Город</div>
+      <div class="gridItem">Адрес</div>
+      <div class="gridItem">Условия</div>
+      <div class="gridItem">Контакты</div>
+      <div class="gridItem">Отозвались</div>
+      <div class="gridItem">Действия</div>
+      </div>
+      <div class="table-row">
+      <p class="nomatch-paragraph">В настоящее время не создано ни одного матча</p>
+      <button id="nomatch-button" class="nomatch-button">Создать матч</button>
+      </div>
 `;
     }
-
-    if (event.target.id === 'nomatch-button') {
-      document.getElementById('createMatchLink').click();
-    }
-
-    // noMatchButton?.addEventListener('click', (event) => {
-    //   console.log('click');
-    //   // document.getElementById('createMatchLink').click();
-    // });
 
     slider.style.display = 'none';
     table.style.display = 'flex';
@@ -115,7 +128,7 @@ ulList?.addEventListener('click', async (event) => {
   if (event.target.id === 'regLink') {
     modalRegistration.style.display = 'flex';
   }
-  if (event.target.id === 'loginLink') {
+  if (event.target.id === 'loginLink' || event.target.id === 'secondLoginLink') {
     modalLogin.style.display = 'flex';
   }
   if (event.target.id === 'createMatchLink') {
@@ -145,8 +158,11 @@ ulList?.addEventListener('click', async (event) => {
 
     table.innerHTML = `
     <div class="table-row">
+    <div class="gridItem">Игра</div>
     <div class="gridItem">Когда</div>
- <div class="gridItem">Где</div>
+    <div class="gridItem">Страна</div>
+    <div class="gridItem">Город</div>
+ <div class="gridItem">Адрес</div>
  <div class="gridItem">Условия</div>
  <div class="gridItem">Контакты</div>
  <div class="gridItem">Отозвались</div>
@@ -155,11 +171,20 @@ ulList?.addEventListener('click', async (event) => {
 ${result.map((el, index) => (`
 <div class="table-row" data-matchid="${el.id}">
 <div class="table-row__data">
+${el.game}
+</div>
+<div class="table-row__data">
    ${new Date(el.date).toISOString().replace(/T/, ' ').replace(/\..+/, '')
       .slice(5, -3)}
    <br />
    ${new Date(el.date_end).toISOString().replace(/T/, ' ').replace(/\..+/, '')
       .slice(5, -3)}
+ </div>
+ <div class="table-row__data">
+   ${el.country}
+ </div>
+ <div class="table-row__data">
+   ${el.city}
  </div>
  <div class="table-row__data">
    ${el.address}
@@ -188,8 +213,11 @@ ${(Number(userId) === Number(el.admin_id)) ? (`
     if (result.length === 0) {
       table.innerHTML = `
 <div class="table-row">
+<div class="gridItem">Игра</div>
 <div class="gridItem">Когда</div>
-<div class="gridItem">Где</div>
+<div class="gridItem">Страна</div>
+<div class="gridItem">Город</div>
+<div class="gridItem">Адрес</div>
 <div class="gridItem">Условия</div>
 <div class="gridItem">Контакты</div>
 <div class="gridItem">Отозвались</div>
@@ -208,10 +236,11 @@ ${(Number(userId) === Number(el.admin_id)) ? (`
   }
 });
 
-// noMatchButton?.addEventListener('click', (event) => {
-//   console.log('click');
-//   // document.getElementById('createMatchLink').click();
-// });
+modalWindow?.addEventListener('click', (event) => {
+  if (event.target.className === 'modal_window') {
+    event.target.style.display = 'none';
+  }
+});
 
 //! !Регистрация
 registrationForm?.addEventListener('submit', async (event) => {
