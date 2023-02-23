@@ -1,24 +1,26 @@
-const React = require("react");
-const CreateMatch = require("../components/CreateMatch");
-const Layout = require("../components/Layout");
-const Login = require("../components/Login");
-const Profile = require("../components/Profile");
-const Registration = require("../components/Registration");
-const Contacts = require("../components/Contacts");
-const Confirm = require("../components/Confirm");
+const React = require('react');
+const CreateMatch = require('../components/CreateMatch');
+const Layout = require('../components/Layout');
+const Login = require('../components/Login');
+const Profile = require('../components/Profile');
+const Registration = require('../components/Registration');
+const Contacts = require('../components/Contacts');
+const Confirm = require('../components/Confirm');
+const Tournaments = require('../components/Tournaments');
 
 function Homepage({ user, sports }) {
   return (
     <Layout user={user}>
       <Profile user={user} />
       <Contacts user={user} />
+      <Tournaments user={user} />
       <div className="wrapper findMatchListner">
         <div
           className="tableGrid"
           id="table_header"
           style={{
             gridTemplateColumns: `repeat(${sports.length}, 1fr)`,
-            display: "none",
+            display: 'none',
           }}
         >
           {sports?.map((sport, index) => (
@@ -36,7 +38,7 @@ function Homepage({ user, sports }) {
         <div
           id="table"
           className="tableGrid"
-          style={{ gridTemplateColumns: "repeat(5, 1fr)", display: "none" }}
+          style={{ gridTemplateColumns: 'repeat(5, 1fr)', display: 'none' }}
         />
         <div className="cd-slider">
           <ul className="slider__list">

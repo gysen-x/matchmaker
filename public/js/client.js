@@ -13,9 +13,15 @@ const modalCreateMatch = document.getElementById("modalCreateMatch");
 const wrapperFindMatch = document.querySelector(".findMatchListner");
 const userAccount = document.getElementById("user-account");
 const userId = userAccount?.dataset?.userid;
+const noMatchButton = document.getElementById('nomatch-button');
 
-wrapperFindMatch?.addEventListener("click", async (event) => {
-  if (event.target.dataset.findmatch === "findMatch") {
+
+wrapperFindMatch?.addEventListener('click', async (event) => {
+  if (event.target.id === 'nomatch-button') {
+    document.getElementById('createMatchLink').click();
+  }
+  if (event.target.dataset.findmatch === 'findMatch') {
+
     event.preventDefault();
     const sportid = Number(event.target.dataset.sportid);
     const response = await fetch("/match/bysport", {
@@ -91,9 +97,26 @@ ${
 <button class="cancel-button table-button">Отменить</button>
 </div> 
 </div>
-`
-  )
-  .join("")}`;
+
+`)).join('')}`;
+    if (result.length === 0) {
+      table.innerHTML = `
+<div class="table-row">
+<div class="gridItem">Когда</div>
+<div class="gridItem">Где</div>
+<div class="gridItem">Условия</div>
+<div class="gridItem">Контакты</div>
+<div class="gridItem">Отозвались</div>
+<div class="gridItem">Действия</div>
+</div>
+<div class="table-row">
+<p class="nomatch-paragraph">В настоящее время не создано ни одного матча</p>
+<button id="nomatch-button" class="nomatch-button">Создать матч</button>
+</div>
+`;
+    }
+
+
 
     slider.style.display = "none";
     table.style.display = "flex";
@@ -103,13 +126,15 @@ ${
 
 ulList?.addEventListener("click", async (event) => {
   event.preventDefault();
-  if (event.target.id === "homepage") {
-    document.querySelector(".findMatchListner").style.display = "block";
-    document.querySelector(".profile-container").style.display = "none";
-    document.querySelector(".contacts-container").style.display = "none";
-    slider.style.display = "block";
-    table.style.display = "none";
-    tableHeader.style.display = "none";
+
+  if (event.target.id === 'homepage') {
+    document.querySelector('.findMatchListner').style.display = 'block';
+    document.querySelector('.profile-container').style.display = 'none';
+    document.querySelector('.contacts-container').style.display = 'none';
+    document.querySelector('.tournaments-container').style.display = 'none';
+    slider.style.display = 'block';
+    table.style.display = 'none';
+    tableHeader.style.display = 'none';
   }
   if (event.target.id === "regLink") {
     modalRegistration.style.display = "flex";
@@ -117,22 +142,28 @@ ulList?.addEventListener("click", async (event) => {
   if (event.target.id === "loginLink") {
     modalLogin.style.display = "flex";
   }
-  if (event.target.id === "createMatchLink") {
-    modalCreateMatch.style.display = "flex";
-    document.querySelector(".findMatchListner").style.display = "block";
-    document.querySelector(".profile-container").style.display = "none";
-    document.querySelector(".contacts-container").style.display = "none";
+
+  if (event.target.id === 'createMatchLink') {
+    modalCreateMatch.style.display = 'flex';
+    document.querySelector('.findMatchListner').style.display = 'block';
+    document.querySelector('.profile-container').style.display = 'none';
+    document.querySelector('.contacts-container').style.display = 'none';
+    document.querySelector('.tournaments-container').style.display = 'none';
+
   }
   if (event.target.id === "logoutLink") {
     await fetch("/user/logout");
     window.location.replace("/");
   }
-  if (event.target.id === "findMatchLink") {
-    document.querySelector(".findMatchListner").style.display = "block";
-    document.querySelector(".profile-container").style.display = "none";
-    document.querySelector(".contacts-container").style.display = "none";
-    const response = await fetch("/match/bysport", {
-      method: "POST",
+
+  if (event.target.id === 'findMatchLink') {
+    document.querySelector('.findMatchListner').style.display = 'block';
+    document.querySelector('.profile-container').style.display = 'none';
+    document.querySelector('.contacts-container').style.display = 'none';
+    document.querySelector('.tournaments-container').style.display = 'none';
+    const response = await fetch('/match/bysport', {
+      method: 'POST',
+
       headers: {
         "Content-type": "application/json",
       },
@@ -208,17 +239,35 @@ ${
   )
   .join("")}`;
 
-    slider.style.display = "none";
-    table.style.display = "flex";
-    tableHeader.style.display = "flex";
+
+    if (result.length === 0) {
+      table.innerHTML = `
+<div class="table-row">
+<div class="gridItem">Когда</div>
+<div class="gridItem">Где</div>
+<div class="gridItem">Условия</div>
+<div class="gridItem">Контакты</div>
+<div class="gridItem">Отозвались</div>
+<div class="gridItem">Действия</div>
+</div>
+<div class="table-row">
+<p class="nomatch-paragraph">В настоящее время не создано ни одного матча</p>
+<button id="nomatch-button" class="nomatch-button">Создать матч</button>
+</div>
+`;
+    }
+
+    slider.style.display = 'none';
+    table.style.display = 'flex';
+    tableHeader.style.display = 'flex';
   }
 });
 
-modalWindow?.addEventListener("click", (event) => {
-  if (event.target.className === "modal_window") {
-    event.target.style.display = "none";
-  }
-});
+// noMatchButton?.addEventListener('click', (event) => {
+//   console.log('click');
+//   // document.getElementById('createMatchLink').click();
+// });
+
 
 //! !Регистрация
 registrationForm?.addEventListener("submit", async (event) => {
@@ -270,4 +319,9 @@ loginForm?.addEventListener("submit", async (event) => {
   } catch (error) {
     console.log(error);
   }
+});
+
+noMatchButton?.addEventListener('click', (event) => {
+  console.log('click');
+  // document.getElementById('createMatchLink').click();
 });

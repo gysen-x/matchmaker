@@ -30,6 +30,11 @@ createMatchForm?.addEventListener("submit", async (event) => {
     body: JSON.stringify(data),
   });
   const result = await response.json();
+
+  if (result.message) {
+    errorWrapper.innerHTML = result.message;
+  }
+
   if (result.address) {
     game.value = "";
     date.value = "";
@@ -116,9 +121,29 @@ ${
 <button class="cancel-button table-button">Отменить</button>
 </div> 
 </div>
-`
-  )
-  .join("")}`;
+`)).join('')}`;
+    if (res.length === 0) {
+      table.innerHTML = `
+    <div class="table-row">
+    <div class="gridItem">Когда</div>
+ <div class="gridItem">Где</div>
+ <div class="gridItem">Условия</div>
+ <div class="gridItem">Контакты</div>
+ <div class="gridItem">Отозвались</div>
+ <div class="gridItem">Действия</div>
+ </div>
+ <div class="table-row">
+ <p class="nomatch-paragraph">В настоящее время не создано ни одного матча</p>
+ <button id="nomatch-button" class="nomatch-button">Создать матч</button>
+ </div>
+ `;
+    }
+
+    // createMatchButton?.addEventListener('click', (event) => {
+    //   event.preventDefault();
+    //   document.getElementById('createMatchLink').click();
+    // });
+
 
     slider.style.display = "none";
     table.style.display = "flex";
