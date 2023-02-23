@@ -1,6 +1,6 @@
 const React = require('react');
 
-module.exports = function Contacts({ user }) {
+module.exports = function Tournaments({ user }) {
   return (
     <div className="tournaments-container wrapper" style={{ display: 'none' }}>
       <div className="tournament">

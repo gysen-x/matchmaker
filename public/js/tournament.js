@@ -1,12 +1,13 @@
 const tournamentLink = document.getElementById('champLink');
-const tournamentList = document.querySelector('.tournamentList');
-const tournamentContainer = document.getElementById('tournaments-container');
+const tournamentList = document.getElementById('tournamentList');
+const tournamentContainer = document.querySelector('.tournaments-container');
 
 tournamentLink?.addEventListener('click', (event) => {
   event.preventDefault();
   tournamentContainer.style.display = 'flex';
   document.querySelector('.findMatchListner').style.display = 'none';
   document.querySelector('.profile-container').style.display = 'none';
+  document.querySelector('.contacts-container').style.display = 'none';
   tournamentList.innerHTML = `
   <li className="tournament__item">
             <div className="tournament__column">

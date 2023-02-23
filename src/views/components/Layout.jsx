@@ -1,6 +1,6 @@
-const React = require("react");
-const Header = require("./Header");
-const Footer = require("./Footer");
+const React = require('react');
+const Header = require('./Header');
+const Footer = require('./Footer');
 
 module.exports = function Layout({ children, user }) {
   return (
@@ -18,6 +18,7 @@ module.exports = function Layout({ children, user }) {
         <script defer src="/js/profile.js" />
         <script defer src="/js/tableMatch.js" />
         <script defer src="/js/contacts.js" />
+        <script defer src="/js/tournament.js" />
       </head>
       <body>
         <Header user={user} />

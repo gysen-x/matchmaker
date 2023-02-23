@@ -13,8 +13,12 @@ const modalCreateMatch = document.getElementById('modalCreateMatch');
 const wrapperFindMatch = document.querySelector('.findMatchListner');
 const userAccount = document.getElementById('user-account');
 const userId = userAccount?.dataset?.userid;
+const noMatchButton = document.getElementById('nomatch-button');
 
 wrapperFindMatch?.addEventListener('click', async (event) => {
+  if (event.target.id === 'nomatch-button') {
+    document.getElementById('createMatchLink').click();
+  }
   if (event.target.dataset.findmatch === 'findMatch') {
     event.preventDefault();
     const sportid = Number(event.target.dataset.sportid);
@@ -68,6 +72,27 @@ ${(Number(userId) === Number(el.admin_id)) ? (`
 </div> 
 </div>
 `)).join('')}`;
+    if (result.length === 0) {
+      table.innerHTML = `
+<div class="table-row">
+<div class="gridItem">Когда</div>
+<div class="gridItem">Где</div>
+<div class="gridItem">Условия</div>
+<div class="gridItem">Контакты</div>
+<div class="gridItem">Отозвались</div>
+<div class="gridItem">Действия</div>
+</div>
+<div class="table-row">
+<p class="nomatch-paragraph">В настоящее время не создано ни одного матча</p>
+<button id="nomatch-button" class="nomatch-button">Создать матч</button>
+</div>
+`;
+    }
+
+    // noMatchButton?.addEventListener('click', (event) => {
+    //   console.log('click');
+    //   // document.getElementById('createMatchLink').click();
+    // });
 
     slider.style.display = 'none';
     table.style.display = 'flex';
@@ -81,6 +106,7 @@ ulList?.addEventListener('click', async (event) => {
     document.querySelector('.findMatchListner').style.display = 'block';
     document.querySelector('.profile-container').style.display = 'none';
     document.querySelector('.contacts-container').style.display = 'none';
+    document.querySelector('.tournaments-container').style.display = 'none';
     slider.style.display = 'block';
     table.style.display = 'none';
     tableHeader.style.display = 'none';
@@ -96,6 +122,7 @@ ulList?.addEventListener('click', async (event) => {
     document.querySelector('.findMatchListner').style.display = 'block';
     document.querySelector('.profile-container').style.display = 'none';
     document.querySelector('.contacts-container').style.display = 'none';
+    document.querySelector('.tournaments-container').style.display = 'none';
   }
   if (event.target.id === 'logoutLink') {
     await fetch('/user/logout');
@@ -105,6 +132,7 @@ ulList?.addEventListener('click', async (event) => {
     document.querySelector('.findMatchListner').style.display = 'block';
     document.querySelector('.profile-container').style.display = 'none';
     document.querySelector('.contacts-container').style.display = 'none';
+    document.querySelector('.tournaments-container').style.display = 'none';
     const response = await fetch('/match/bysport', {
       method: 'POST',
       headers: {
@@ -156,17 +184,33 @@ ${(Number(userId) === Number(el.admin_id)) ? (`
 </div>
 `)).join('')}`;
 
+    if (result.length === 0) {
+      table.innerHTML = `
+<div class="table-row">
+<div class="gridItem">Когда</div>
+<div class="gridItem">Где</div>
+<div class="gridItem">Условия</div>
+<div class="gridItem">Контакты</div>
+<div class="gridItem">Отозвались</div>
+<div class="gridItem">Действия</div>
+</div>
+<div class="table-row">
+<p class="nomatch-paragraph">В настоящее время не создано ни одного матча</p>
+<button id="nomatch-button" class="nomatch-button">Создать матч</button>
+</div>
+`;
+    }
+
     slider.style.display = 'none';
     table.style.display = 'flex';
     tableHeader.style.display = 'flex';
   }
 });
 
-modalWindow?.addEventListener('click', (event) => {
-  if (event.target.className === 'modal_window') {
-    event.target.style.display = 'none';
-  }
-});
+// noMatchButton?.addEventListener('click', (event) => {
+//   console.log('click');
+//   // document.getElementById('createMatchLink').click();
+// });
 
 //! !Регистрация
 registrationForm?.addEventListener('submit', async (event) => {
@@ -218,4 +262,9 @@ loginForm?.addEventListener('submit', async (event) => {
   } catch (error) {
     console.log(error);
   }
+});
+
+noMatchButton?.addEventListener('click', (event) => {
+  console.log('click');
+  // document.getElementById('createMatchLink').click();
 });

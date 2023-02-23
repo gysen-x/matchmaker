@@ -84,6 +84,12 @@ modalConfirm?.addEventListener('click', async (event) => {
   }
 });
 
+// createMatchButton?.addEventListener('click', (event) => {
+//   event.preventDefault();
+//   document.getElementById('createMatchLink').click();
+// });
+
+// 'findMatch'
 // userId
 // matchId
 
