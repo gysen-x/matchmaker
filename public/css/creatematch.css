@@ -51,9 +51,18 @@ select.form-control {
 .card-body {
   padding: 16px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: white;
+}
+
+.card-body p {
+  font-size: 18px;
+  margin: 10px;
+}
+.card-body button {
+  margin: 10px;
 }
 .form-create {
   display: flex;

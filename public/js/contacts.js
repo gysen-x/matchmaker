@@ -6,6 +6,7 @@ const contactsMap = document.getElementById('contactsMap');
 console.log('contactsMap', contactsMap);
 
 contactsLink?.addEventListener('click', (event) => {
+
   event.preventDefault();
   contactsContainer.style.display = 'flex';
   document.querySelector('.findMatchListner').style.display = 'none';
