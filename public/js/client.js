@@ -62,7 +62,7 @@ ${result.map((el, index) => (`
 ${(Number(userId) === Number(el.admin_id)) ? (`
 <button class="delete-button table-button">Удалить матч</button>
 `) : (`
-<button class="join-button table-button">Принять участие</button>
+<button class="join-button table-button">Участвовать</button>
 `)}
 <button class="cancel-button table-button">Отменить</button>
 </div> 
@@ -79,6 +79,9 @@ ulList?.addEventListener('click', async (event) => {
   event.preventDefault();
   if (event.target.id === 'homepage') {
     // window.location.replace('/');
+    document.querySelector('.findMatchListner').style.display = 'block';
+    document.querySelector('.profile-container').style.display = 'none';
+    document.querySelector('.contacts-container').style.display = 'none';
     slider.style.display = 'block';
     table.style.display = 'none';
     tableHeader.style.display = 'none';
@@ -91,12 +94,18 @@ ulList?.addEventListener('click', async (event) => {
   }
   if (event.target.id === 'createMatchLink') {
     modalCreateMatch.style.display = 'flex';
+    document.querySelector('.findMatchListner').style.display = 'block';
+    document.querySelector('.profile-container').style.display = 'none';
+    document.querySelector('.contacts-container').style.display = 'none';
   }
   if (event.target.id === 'logoutLink') {
     await fetch('/user/logout');
     window.location.replace('/');
   }
   if (event.target.id === 'findMatchLink') {
+    document.querySelector('.findMatchListner').style.display = 'block';
+    document.querySelector('.profile-container').style.display = 'none';
+    document.querySelector('.contacts-container').style.display = 'none';
     const response = await fetch('/match/bysport', {
       method: 'POST',
       headers: {
@@ -141,7 +150,7 @@ ${result.map((el, index) => (`
 ${(Number(userId) === Number(el.admin_id)) ? (`
 <button class="delete-button table-button">Удалить матч</button>
 `) : (`
-<button class="join-button table-button">Принять участие</button>
+<button class="join-button table-button">Участвовать</button>
 `)}
 <button class="cancel-button table-button">Отменить</button>
 </div> 

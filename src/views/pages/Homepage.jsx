@@ -5,6 +5,7 @@ const Login = require("../components/Login");
 const Profile = require("../components/Profile");
 const Registration = require("../components/Registration");
 const Contacts = require("../components/Contacts");
+const Confirm = require("../components/Confirm");
 
 function Homepage({ user, sports }) {
   return (
@@ -129,6 +130,7 @@ function Homepage({ user, sports }) {
           <CreateMatch user={user} sports={sports} />
           <Registration />
           <Login />
+          <Confirm />
         </div>
       </div>
     </Layout>

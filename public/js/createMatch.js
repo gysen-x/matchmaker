@@ -82,7 +82,7 @@ ${res.map((el, index) => (`
 ${(Number(userId) === Number(el.admin_id)) ? (`
 <button class="delete-button table-button">Удалить матч</button>
 `) : (`
-<button class="join-button table-button">Принять участие</button>
+<button class="join-button table-button">Участвовать</button>
 `)}
 <button class="cancel-button table-button">Отменить</button>
 </div> 
