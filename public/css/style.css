@@ -436,6 +436,7 @@ nav {
   display: grid;
   grid-auto-flow: column;
   padding: 10px 20px;
+  border-bottom: 1px solid black;
 }
 
 .table-row__title {
@@ -485,7 +486,7 @@ nav {
 #table {
   display: flex;
   flex-direction: column;
-  max-height: 384px;
+  max-height: 60vh;
   overflow-y: scroll;
 }
 
@@ -507,7 +508,6 @@ nav {
   height: 100%;
   font-size: 18px;
   font-weight: bold;
-  border-bottom: 1px solid black;
 }
 
 .headerSports {
@@ -545,13 +545,24 @@ nav {
   align-items: center;
 }
 
+
+/* Contacts
+------------------------------------*/
+
 .contacts-container {
   flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
 }
 
 .contacts {
   display: flex;
   justify-content: space-between;
+  width: 80%;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 20px;
+
 }
 
 .contacts__left {
@@ -565,7 +576,6 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  width: 100%;
 }
 
 .contacts__label {
@@ -574,16 +584,23 @@ nav {
 
 .contacts__input {
   width: 100%;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .contacts_textarea {
-  height: 100%;
+  width: 100%;
+  height: 90px;
+  border: 1px solid black;
+  border-radius: 5px;
   resize: none;
-  flex-shrink: 0;
 }
 
 .findUs {
   margin-bottom: 20px;
+  font-size: 29px;
+  align-self: center;
 }
 
 .contacts__button {
@@ -593,6 +610,7 @@ nav {
 
 .contacts__text {
   font-size: 14px;
+  margin-bottom: 5px;
 }
 
 .backForm {
@@ -600,7 +618,17 @@ nav {
 }
 
 .contacts__button {
-  margin-top: 10px;
+  height: 30px;
+  border: 2px solid #000;
+}
+
+.contacts__map {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.contacts__iframe {
+  border: none;
 }
 
 /* Find match
