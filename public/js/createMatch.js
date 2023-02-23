@@ -46,7 +46,6 @@ createMatchForm?.addEventListener('submit', async (event) => {
       body: JSON.stringify({ sport_id: sportid }),
     });
     const res = await resp.json();
-    table.style.gridTemplateRows = `repeat(${res.length}, 1fr)`;
     table.innerHTML = `
     <div class="table-row">
     <div class="gridItem">Когда</div>

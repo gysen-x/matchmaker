@@ -442,9 +442,12 @@ nav {
 }
 
 .table-row {
-  display: grid;
+  display: flex;
   grid-auto-flow: column;
   padding: 10px 20px;
+  justify-content: space-between;
+}
+.table-row:not(:last-child) {
   border-bottom: 1px solid black;
 }
 
@@ -456,7 +459,7 @@ nav {
 .table-row__data {
   justify-self: start;
   align-self: center;
-  width: 100%;
+  width: 16%;
   height: 100%;
   font-size: 18px;
   padding: 10px;
@@ -508,13 +511,9 @@ nav {
   border-radius: 15px 15px 0px 0px;
 }
 
-.table-row {
-  display: flex;
-}
-
 .gridItem {
   padding: 10px;
-  width: 100%;
+  width: 16%;
   height: 100%;
   font-size: 18px;
   font-weight: bold;
@@ -650,10 +649,11 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 16%;
 }
 
 .table-button {
-  min-width: 100px;
+  width: 100px;
   height: 30px;
   border: 2px solid #000;
   border-radius: 10px;
