@@ -1,4 +1,4 @@
-const React = require("react");
+const React = require('react');
 
 module.exports = function Header({ user }) {
   return (
@@ -6,11 +6,23 @@ module.exports = function Header({ user }) {
       <div className="wrapper">
         <div className="nav">
           <ul className="nav__list">
-            <li className="nav__item">
-              <a id="createMatchLink" className="nav__link" href="#">
-                Создать матч
-              </a>
-            </li>
+
+            {
+                user ? (
+                  <li className="nav__item">
+                    <a id="createMatchLink" className="nav__link" href="#">
+                      Создать матч
+                    </a>
+                  </li>
+                ) : (
+                  <li className="nav__item">
+                    <a id="secondLoginLink" className="nav__link" href="#">
+                      Создать матч
+                    </a>
+                  </li>
+                )
+              }
+
             <li className="nav__item">
               <a id="findMatchLink" className="nav__link" href="#">
                 Найти матч
@@ -25,7 +37,7 @@ module.exports = function Header({ user }) {
               <h1
                 className="nav__title"
                 id="homepage"
-                style={{ cursor: "pointer" }}
+                style={{ cursor: 'pointer' }}
               >
                 Matchmaker
               </h1>
