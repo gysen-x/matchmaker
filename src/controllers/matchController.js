@@ -70,11 +70,14 @@ class MatchController {
   async showAll(req, res) {
     const sport_id = req.body.sport_id || 2;
     try {
-      const matches = await Match.findAll({
+      const allMatches = await Match.findAll({
         where: { sport_id },
         include: 'players',
       });
-      console.log(matches);
+      const currentDate = Date.now();
+      const matches = allMatches.filter((match) => new Date(match.date) - currentDate > 0); //registraion
+      const actionMatches = allMatches.filter((match) => new Date(match.date) - currentDate < 0); //now playing
+      const playedMatches = allMatches.filter((match) => new Date(match.date_end) - currentDate < 0); //ended matches
       res.status(200).json(matches);
     } catch (error) {
       return res.status(404).json({ message: 'Something went wrong' });
