@@ -61,7 +61,7 @@ createMatchForm?.addEventListener('submit', async (event) => {
     currentMatchTable.innerHTML = currentMatchesTable(res.actionMatches);
     currentMatchTable.style.display = 'flex';
 
-    document.querySelector('.searchbar__wrapper').style.display = 'block';
+    document.querySelector('.searchbar__wrapper').style.display = 'flex';
     slider.style.display = 'none';
     table.style.display = 'flex';
     tableHeader.style.display = 'flex';

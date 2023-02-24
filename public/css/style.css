@@ -179,6 +179,7 @@ ul.nav__list a:hover {
 }
 
 @media (max-width: 600px) {
+
   .footer-distributed .footer-left,
   .footer-distributed .footer-right {
     text-align: center;
@@ -269,7 +270,7 @@ ul.nav__list a:hover {
   overflow: hidden;
   transform: translateY(-30%);
   opacity: 0;
-  font-size: 110px;
+  font-size: 130px;
   transition: transform 0.5s, opacity 0.5s;
   will-change: transform, opacity;
 }
@@ -866,8 +867,8 @@ nav {
   margin-left: 3px;
 }
 
-.inputbox input:hover ~ span,
-.inputbox input:focus ~ span {
+.inputbox input:hover~span,
+.inputbox input:focus~span {
   color: #000;
   transform: translateX(-10px) translateY(-34px);
   font-size: 0, 75em;
@@ -886,8 +887,8 @@ nav {
   z-index: 9;
 }
 
-.inputbox input:hover ~ i,
-.inputbox input:focus ~ i {
+.inputbox input:hover~i,
+.inputbox input:focus~i {
   height: 44px;
 }
 
