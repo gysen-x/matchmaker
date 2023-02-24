@@ -179,6 +179,7 @@ ul.nav__list a:hover {
 }
 
 @media (max-width: 600px) {
+
   .footer-distributed .footer-left,
   .footer-distributed .footer-right {
     text-align: center;
@@ -234,7 +235,7 @@ ul.nav__list a:hover {
 }
 
 #slider__image-2 {
-  background-image: url(/img/cybergames.jpeg);
+  background-image: url(/img/cybergames.jpg);
 }
 
 #slider__image-3 {
@@ -271,6 +272,7 @@ ul.nav__list a:hover {
   overflow: hidden;
   transform: translateY(-30%);
   opacity: 0;
+  font-size: 110px;
   transition: transform 0.5s, opacity 0.5s;
   will-change: transform, opacity;
 }
@@ -732,6 +734,28 @@ nav {
   color: white;
 }
 
+.searchbar__wrapper {
+  align-items: center;
+  gap: 20px;
+}
+
+.inputbox__button {
+  width: 100px;
+  height: 30px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.inputbox__button:hover {
+  background-color: black;
+  color: white;
+}
+
 /* Tournaments
 ------------------------------------*/
 
@@ -846,8 +870,8 @@ nav {
   margin-left: 3px;
 }
 
-.inputbox input:hover ~ span,
-.inputbox input:focus ~ span {
+.inputbox input:hover~span,
+.inputbox input:focus~span {
   color: #000;
   transform: translateX(-10px) translateY(-34px);
   font-size: 0, 75em;
@@ -866,7 +890,7 @@ nav {
   z-index: 9;
 }
 
-.inputbox input:hover ~ i,
-.inputbox input:focus ~ i {
+.inputbox input:hover~i,
+.inputbox input:focus~i {
   height: 44px;
 }
