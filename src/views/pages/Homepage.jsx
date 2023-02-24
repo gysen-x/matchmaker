@@ -45,7 +45,7 @@ function Homepage({ user, sports }) {
             <li>
               <div id="slider__image-1" className="image" />
               <div className=" content">
-                <h2>Футбол</h2>
+                <h2>Спорт</h2>
                 <a
                   data-sportid="1"
                   className="slider__link"
@@ -59,7 +59,7 @@ function Homepage({ user, sports }) {
             <li>
               <div id="slider__image-2" className="image" />
               <div className="content">
-                <h2>Баскетбол</h2>
+                <h2>Киберспорт</h2>
                 <a
                   data-sportid="2"
                   className="slider__link"
@@ -73,21 +73,7 @@ function Homepage({ user, sports }) {
             <li>
               <div id="slider__image-3" className="image" />
               <div className="content">
-                <h2>Dota 2</h2>
-                <a
-                  data-sportid="5"
-                  className="slider__link"
-                  data-findmatch="findMatch"
-                  href="/"
-                >
-                  Найти игру
-                </a>
-              </div>
-            </li>
-            <li>
-              <div id="slider__image-4" className="image" />
-              <div className="content">
-                <h2>Теннис</h2>
+                <h2>Настольные игры</h2>
                 <a
                   data-sportid="3"
                   className="slider__link"
@@ -99,6 +85,20 @@ function Homepage({ user, sports }) {
               </div>
             </li>
             <li>
+              <div id="slider__image-4" className="image" />
+              <div className="content">
+                <h2>Другое</h2>
+                <a
+                  data-sportid="4"
+                  className="slider__link"
+                  data-findmatch="findMatch"
+                  href="/"
+                >
+                  Найти игру
+                </a>
+              </div>
+            </li>
+            {/* <li>
               <div id="slider__image-5" className="image" />
               <div className="content">
                 <h2>Волейбол</h2>
@@ -125,7 +125,7 @@ function Homepage({ user, sports }) {
                   Найти игру
                 </a>
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div id="hiddenContainer">

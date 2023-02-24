@@ -232,28 +232,30 @@ ul.nav__list a:hover {
 }
 
 #slider__image-1 {
-  background-image: url(https://www.glavtema.ru/image/article/6/4/3/1643.jpeg);
+  background-image: url(/img/sportgames.jpeg);
 }
 
 #slider__image-2 {
-  background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1613656151_16-p-fon-dlya-prezentatsii-basketbol-18.jpg);
+  background-image: url(/img/cybergames.jpeg);
 }
 
 #slider__image-3 {
-  background-image: url(http://mobimg.b-cdn.net/v3/fetch/0f/0f4a5b01e0d2cb68613610cc28556efc.jpeg);
+  background-image: url(/img/boardgames.jpg);
 }
 
 #slider__image-4 {
-  background-image: url(https://azurhotel.gr/wp-content/uploads/2018/07/shutterstock_215158288.jpg);
+  background-image: url(/img/othergames.jpg);
 }
 
-#slider__image-5 {
+/* #slider__image-5 {
   background-image: url(https://kawkaz-sochi.ru/frontend/web/images/service_images/6102/271239/%D0%B8%CC%86%D0%B8%CC%86%D0%B8%CC%86%D0%B8%CC%86.jpg);
 }
 
 #slider__image-6 {
-  background-image: url(https://img.money.com/2015/09/150929_em_monopoly.jpg);
-}
+  background-image: url(https://azurhotel.gr/wp-content/uploads/2018/07/shutterstock_215158288.jpg);
+} */
+
+
 
 .content {
   position: absolute;
@@ -751,6 +753,7 @@ nav {
 .tournament__column {
   display: flex;
   flex-direction: column;
+  width: 20%;
 }
 
 .tournament__text {
@@ -758,6 +761,7 @@ nav {
 }
 
 .tournament__button {
+  align-self: center;
   width: 100px;
   height: 30px;
   border: 2px solid #000;
