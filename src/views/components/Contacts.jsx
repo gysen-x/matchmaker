@@ -20,7 +20,10 @@ module.exports = function Contacts({ user }) {
             <label className="contacts__label">
               {" "}
               <p className="contacts__text">Текст обращения</p>
-              <textarea name="text" className="contacts_textarea" />
+              <textarea
+                name="text"
+                className="contacts_textarea contacts__input"
+              />
             </label>
             <button type="submit" className="contacts__button table-button">
               Отправить
