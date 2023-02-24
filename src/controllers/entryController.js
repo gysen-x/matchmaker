@@ -64,35 +64,13 @@ class EntryController {
   async getEntry(req, res) {
     const { user_id } = req.body;
     try {
-      // const entryData = await Entry.findAll({
-      //   where: { user_id },
-      //   include: [
-      //     {
-      //       model: Match,
-      //       include: [{ model: Entry }],
-      //     },
-      //   ],
-      // });
-
       const entryData = await Match.findAll({
         include: "players",
       });
-      console.log(entryData);
-
-      // const entryData = await Entry.findAll({
-      //   where: { user_id },
-      //   raw: true,
-      // });
-      // const obj = entryData[0];
-      // const { match_id } = obj;
-      // console.log(match_id);
-      // const allPlayers = await Entry.findAll({
-      //   where: { match_id },
-      //   raw: true,
-      // });
-      // console.log(allPlayers);
-
-      res.json(entryData);
+      const matches = entryData.filter(
+        (match) => match.players.map((player) => player.id) == user_id
+      );
+      res.json(matches);
     } catch (error) {
       console.log(error);
     }
