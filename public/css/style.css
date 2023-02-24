@@ -180,6 +180,7 @@ ul.nav__list a:hover {
 }
 
 @media (max-width: 600px) {
+
   .footer-distributed .footer-left,
   .footer-distributed .footer-right {
     text-align: center;
@@ -575,6 +576,21 @@ nav {
 .profile__data-text {
   height: 20px;
   font-weight: 700;
+  border: 1px solid black;
+  height: 40px;
+  padding: 8px;
+}
+
+#editProfile {
+  margin-bottom: 20px;
+}
+
+.profile-entries__wrapper {
+  width: 60%;
+}
+
+.profile-entries__title {
+  margin-bottom: 30px;
 }
 
 /* Contacts
@@ -683,6 +699,11 @@ nav {
 
 .container {
   width: 80%;
+}
+
+.contacts__item-text,
+.contacts__link-wrapper {
+  margin-top: 10px;
 }
 
 /* Find match
@@ -873,8 +894,8 @@ nav {
   margin-left: 3px;
 }
 
-.inputbox input:hover ~ span,
-.inputbox input:focus ~ span {
+.inputbox input:hover~span,
+.inputbox input:focus~span {
   color: #000;
   transform: translateX(-10px) translateY(-34px);
   font-size: 0, 75em;
@@ -893,8 +914,8 @@ nav {
   z-index: 9;
 }
 
-.inputbox input:hover ~ i,
-.inputbox input:focus ~ i {
+.inputbox input:hover~i,
+.inputbox input:focus~i {
   height: 44px;
 }
 

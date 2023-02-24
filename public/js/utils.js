@@ -13,24 +13,24 @@ function drawTable(arr) {
      <div class="gridItem">Действия</div>
      </div>
     ${arr
-      .map(
-        (el, index) => `
+    .map(
+      (el, index) => `
     <div class="table-row" data-matchid="${el.id}">
     <div class="table-row__data">
     ${el.game}
     </div>
     <div class="table-row__data">
        ${new Date(el.date)
-         .toISOString()
-         .replace(/T/, " ")
-         .replace(/\..+/, "")
-         .slice(5, -3)}
+    .toISOString()
+    .replace(/T/, ' ')
+    .replace(/\..+/, '')
+    .slice(5, -3)}
        <br />
        ${new Date(el.date_end)
-         .toISOString()
-         .replace(/T/, " ")
-         .replace(/\..+/, "")
-         .slice(5, -3)}
+    .toISOString()
+    .replace(/T/, ' ')
+    .replace(/\..+/, '')
+    .slice(5, -3)}
      </div>
      <div class="table-row__data">
        ${el.country}
@@ -53,20 +53,20 @@ function drawTable(arr) {
     </div>
     <div class="button-wrapper">
     ${
-      Number(userId) === Number(el.admin_id)
-        ? `
+  Number(userId) === Number(el.admin_id)
+    ? `
     <button class="delete-button table-button">Удалить матч</button>
     `
-        : `
+    : `
     <button class="join-button table-button">Участвовать</button>
     `
-    }
-    <button class="cancel-button table-button">Отменить</button>
+}
+    <button class="cancel-button table-button">Покинуть</button>
     </div> 
     </div>
-    `
-      )
-      .join("")}`
+    `,
+    )
+    .join('')}`
     : `
             <div class="table-row">
             <div class="gridItem">Игра</div>
@@ -100,24 +100,24 @@ function currentMatchesTable(arr) {
        <div class="gridItem">Отозвались</div>
        </div>
       ${arr
-        .map(
-          (el, index) => `
+    .map(
+      (el, index) => `
       <div class="table-row" data-matchid="${el.id}">
       <div class="table-row__data">
       ${el.game}
       </div>
       <div class="table-row__data">
          ${new Date(el.date)
-           .toISOString()
-           .replace(/T/, " ")
-           .replace(/\..+/, "")
-           .slice(5, -3)}
+    .toISOString()
+    .replace(/T/, ' ')
+    .replace(/\..+/, '')
+    .slice(5, -3)}
          <br />
          ${new Date(el.date_end)
-           .toISOString()
-           .replace(/T/, " ")
-           .replace(/\..+/, "")
-           .slice(5, -3)}
+    .toISOString()
+    .replace(/T/, ' ')
+    .replace(/\..+/, '')
+    .slice(5, -3)}
        </div>
        <div class="table-row__data">
          ${el.country}
@@ -139,9 +139,9 @@ function currentMatchesTable(arr) {
        / ${el.max_players}
       </div> 
       </div>
-      `
-        )
-        .join("")}`
+      `,
+    )
+    .join('')}`
     : `
               <div class="table-row">
               <div class="gridItem">Игра</div>
