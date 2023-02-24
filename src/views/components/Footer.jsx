@@ -48,14 +48,8 @@ module.exports = function Footer() {
       <div className="footer-left">
 
         <p className="footer-links">
-          <a className="link-1" href="#">Создать матч</a>
-
-          <a href="#">Найти матч</a>
-
-          <a href="#">Турниры</a>
-
+          <a className="link-1" href="#">Турниры</a>
           <a href="#">Личный кабинет</a>
-
           <a href="#">Контакты</a>
         </p>
 

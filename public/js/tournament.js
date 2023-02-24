@@ -5,6 +5,7 @@ const tournamentContainer = document.querySelector('.tournaments-container');
 tournamentLink?.addEventListener('click', (event) => {
   event.preventDefault();
   tournamentContainer.style.display = 'flex';
+  document.querySelector('.searchbar__wrapper').style.display = 'none';
   document.querySelector('.findMatchListner').style.display = 'none';
   document.querySelector('.profile-container').style.display = 'none';
   document.querySelector('.contacts-container').style.display = 'none';

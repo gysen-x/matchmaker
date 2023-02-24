@@ -1,19 +1,20 @@
-const profileLink = document.getElementById("user-account");
-const profileContainer = document.querySelector(".profile-container");
-const profileEntries = document.getElementById("profile-entries");
+const profileLink = document.getElementById('user-account');
+const profileContainer = document.querySelector('.profile-container');
+const profileEntries = document.getElementById('profile-entries');
 
-profileLink?.addEventListener("click", async (event) => {
+profileLink?.addEventListener('click', async (event) => {
   event.preventDefault();
   try {
-    profileContainer.style.display = "flex";
-    document.querySelector(".findMatchListner").style.display = "none";
-    document.querySelector(".contacts-container").style.display = "none";
-    document.querySelector(".tournaments-container").style.display = "none";
+    profileContainer.style.display = 'flex';
+    document.querySelector('.searchbar__wrapper').style.display = 'none';
+    document.querySelector('.findMatchListner').style.display = 'none';
+    document.querySelector('.contacts-container').style.display = 'none';
+    document.querySelector('.tournaments-container').style.display = 'none';
     const user_id = profileLink.dataset.userid;
-    console.log("user_id", user_id);
-    const response = await fetch("/entry/profile", {
-      method: "POST",
-      headers: { "Content-type": "application/json" },
+    console.log('user_id', user_id);
+    const response = await fetch('/entry/profile', {
+      method: 'POST',
+      headers: { 'Content-type': 'application/json' },
       body: JSON.stringify({ user_id }),
     });
     const result = await response.json();
@@ -61,9 +62,9 @@ profileLink?.addEventListener("click", async (event) => {
    ${el.players.length}
   </div>
   </div>
-  `
+  `,
     )
-    .join("")}`;
+    .join('')}`;
   } catch (error) {
     console.error(error);
   }
