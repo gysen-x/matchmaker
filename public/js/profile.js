@@ -1,20 +1,20 @@
-const profileLink = document.getElementById('user-account');
-const profileContainer = document.querySelector('.profile-container');
-const profileEntries = document.getElementById('profile-entries');
+const profileLink = document.getElementById("user-account");
+const profileContainer = document.querySelector(".profile-container");
+const profileEntries = document.getElementById("profile-entries");
 
-profileLink?.addEventListener('click', async (event) => {
+profileLink?.addEventListener("click", async (event) => {
   event.preventDefault();
   try {
-    profileContainer.style.display = 'flex';
-    document.querySelector('.searchbar__wrapper').style.display = 'none';
-    document.querySelector('.findMatchListner').style.display = 'none';
-    document.querySelector('.contacts-container').style.display = 'none';
-    document.querySelector('.tournaments-container').style.display = 'none';
+    profileContainer.style.display = "flex";
+    document.querySelector(".searchbar__wrapper").style.display = "none";
+    document.querySelector(".findMatchListner").style.display = "none";
+    document.querySelector(".contacts-container").style.display = "none";
+    document.querySelector(".tournaments-container").style.display = "none";
     const user_id = profileLink.dataset.userid;
-    console.log('user_id', user_id);
-    const response = await fetch('/entry/profile', {
-      method: 'POST',
-      headers: { 'Content-type': 'application/json' },
+    console.log("user_id", user_id);
+    const response = await fetch("/entry/profile", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
       body: JSON.stringify({ user_id }),
     });
     const result = await response.json();
@@ -62,10 +62,67 @@ profileLink?.addEventListener('click', async (event) => {
    ${el.players.length}
   </div>
   </div>
-  `,
+  `
     )
-    .join('')}`;
+    .join("")}`;
   } catch (error) {
     console.error(error);
+  }
+});
+
+const editProfile = document.getElementById("editProfile");
+const editProfileModal = document.getElementById("modalEditProfile");
+const editProfileForm = document.getElementById("editProfileForm");
+const profile__left = document.querySelector(".profile__left");
+
+editProfile?.addEventListener("click", (event) => {
+  editProfileModal.style.display = "flex";
+});
+
+editProfileForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const errorWrapper = editProfileForm.querySelector(".error-wrapper");
+  try {
+    const values = new FormData(editProfileForm);
+    const data = Object.fromEntries(values);
+    data.userId = userId;
+    const response = await fetch("/user/edit", {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const result = await response.json();
+    if (result.message) {
+      errorWrapper.innerHTML = result.message;
+    } else {
+      profile__left.innerHTML = `
+      <div class="profile-data">
+        <p class="profile__data-title">Логин</p>
+        <p class="profile__data-text">${result?.username}</p>
+      </div>
+      <div class="profile-data">
+        <p class="profile__data-title">Email</p>
+        <p class="profile__data-text">${result?.email}</p>
+
+      </div>
+      <div class="profile-data">
+        <p class="profile__data-title">Телефон</p>
+        <p class="profile__data-text">${result?.phoneNumber}</p>
+      </div>
+      <div class="profile-data">
+        <p class="profile__data-title">Пол</p>
+        <p class="profile__data-text">${result?.gender}</p>
+      </div>
+      <div class="profile-data">
+        <p class="profile__data-title">Возраст</p>
+        <p class="profile__data-text">${result?.age}</p>
+      </div>
+    `;
+    }
+    editProfileModal.style.display = "none";
+  } catch (error) {
+    console.log(error);
   }
 });

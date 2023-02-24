@@ -7,6 +7,8 @@ const Registration = require("../components/Registration");
 const Contacts = require("../components/Contacts");
 const Confirm = require("../components/Confirm");
 const Tournaments = require("../components/Tournaments");
+const EditProfile = require("../components/EditProfile");
+const Alert = require("../components/Alert");
 
 function Homepage({ user, sports }) {
   return (
@@ -157,13 +159,14 @@ function Homepage({ user, sports }) {
       <div id="hiddenContainer">
         <CreateMatch user={user} sports={sports} />
         {user ? (
-          ""
+          <EditProfile user={user} />
         ) : (
           <>
             <Registration />
             <Login />
           </>
         )}
+        <Alert />
         <Confirm />
       </div>
     </Layout>

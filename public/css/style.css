@@ -15,6 +15,7 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   color: #000;
+  height: 100vh;
 }
 
 a {
@@ -98,7 +99,7 @@ ul.nav__list a:hover {
 --------------------------------------*/
 
 .footer-distributed {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   background-color: #292c2f;
@@ -442,7 +443,7 @@ nav {
 
 .table-row {
   display: flex;
-  grid-auto-flow: column;
+  height: 64px;
   padding: 10px 20px;
   justify-content: space-between;
 }
@@ -505,6 +506,7 @@ nav {
 
 .table-row:first-child {
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   height: 64px;
   background-color: #fff;
@@ -526,6 +528,11 @@ nav {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
+}
+
+.headerSports--active {
+  background-color: #000;
+  color: #ffffff;
 }
 
 /* Error 

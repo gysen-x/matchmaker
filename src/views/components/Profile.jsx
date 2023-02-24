@@ -1,10 +1,11 @@
-const React = require('react');
+const React = require("react");
 
 module.exports = function Profile({ user }) {
   return (
-    <div className="profile-container wrapper" style={{ display: 'none' }}>
+    <div className="profile-container wrapper" style={{ display: "none" }}>
       <div className="profile-data-all">
         <h2 className="profile__title">Личный кабинет</h2>
+        <input className="btn" id="editProfile" value="Изменить" />
         <div className="profile__left">
           <div className="profile-data">
             <p className="profile__data-title">Логин</p>
@@ -13,7 +14,6 @@ module.exports = function Profile({ user }) {
           <div className="profile-data">
             <p className="profile__data-title">Email</p>
             <p className="profile__data-text">{user?.email}</p>
-
           </div>
           <div className="profile-data">
             <p className="profile__data-title">Телефон</p>
