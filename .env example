@@ -1,3 +1,6 @@
 PORT=3000
 DATABASE=postgres://postgres:""@localhost:5432/matchmaker
 COOKIE_SECRET=secretPhrase
+SECURE_EMAIL=soaringamersecure@rambler.ru
+SECURE_PASSWORD=nSXDAnsawioj221xN
+SUPPORT_EMAIL=testpochtadlyapokaza@rambler.ru
