@@ -3,7 +3,7 @@ const React = require('react');
 module.exports = function CreateMatch({ user, sports }) {
   return (
     <div className="modal_window" id="modalCreateMatch">
-      <div className="modal_content">
+      <div className="modal_content create-match-content">
         <div className="card">
           <div className="card-header">
             <div className="text-header">Создать матч</div>
@@ -100,9 +100,6 @@ module.exports = function CreateMatch({ user, sports }) {
                     </option>
                     <option>
                       Узбекистан
-                    </option>
-                    <option>
-                      Азербайджан
                     </option>
                   </select>
                 </label>

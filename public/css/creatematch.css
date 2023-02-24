@@ -116,3 +116,17 @@ select.form-control {
   background-color: #ccc;
   color: #333;
 }
+
+#createMatchForm {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.create-match-content {
+  width: 700px;
+}
+
+#createMatchForm .form-group {
+  width: 45%;
+}
