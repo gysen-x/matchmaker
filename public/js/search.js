@@ -1,5 +1,4 @@
 const inputBox = document.querySelector(".inputbox");
-console.log("inputBox", inputBox);
 
 inputBox?.addEventListener("click", async (event) => {
   if (event.target.tagName === "BUTTON") {

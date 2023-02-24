@@ -1,9 +1,8 @@
 const contactsLink = document.getElementById("contactsLink");
-console.log("contactsLink", contactsLink);
 const contactsContainer = document.querySelector(".contacts-container");
-console.log("contactsContainer", contactsContainer);
 const contactsMap = document.getElementById("contactsMap");
-console.log("contactsMap", contactsMap);
+const { contactsForm } = document.forms;
+console.log(contactsForm);
 
 contactsLink?.addEventListener("click", (event) => {
   event.preventDefault();
@@ -20,4 +19,26 @@ contactsLink?.addEventListener("click", (event) => {
         referrerpolicy="no-referrer-when-downgrade">
         </iframe>
         `;
+});
+
+contactsForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  try {
+    const values = new FormData(contactsForm);
+    const data = Object.fromEntries(values);
+    console.log(data);
+    const response = await fetch("/contacts/feedback", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const result = await response.json();
+    if (result.message) {
+      alert(result.message);
+    }
+  } catch (error) {
+    console.log(error);
+  }
 });
