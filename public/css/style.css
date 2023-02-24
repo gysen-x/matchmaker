@@ -230,28 +230,30 @@ ul.nav__list a:hover {
 }
 
 #slider__image-1 {
-  background-image: url(https://www.glavtema.ru/image/article/6/4/3/1643.jpeg);
+  background-image: url(/img/sportgames.jpeg);
 }
 
 #slider__image-2 {
-  background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1613656151_16-p-fon-dlya-prezentatsii-basketbol-18.jpg);
+  background-image: url(/img/cybergames.jpeg);
 }
 
 #slider__image-3 {
-  background-image: url(http://mobimg.b-cdn.net/v3/fetch/0f/0f4a5b01e0d2cb68613610cc28556efc.jpeg);
+  background-image: url(/img/boardgames.jpg);
 }
 
 #slider__image-4 {
-  background-image: url(https://azurhotel.gr/wp-content/uploads/2018/07/shutterstock_215158288.jpg);
+  background-image: url(/img/othergames.jpg);
 }
 
-#slider__image-5 {
+/* #slider__image-5 {
   background-image: url(https://kawkaz-sochi.ru/frontend/web/images/service_images/6102/271239/%D0%B8%CC%86%D0%B8%CC%86%D0%B8%CC%86%D0%B8%CC%86.jpg);
 }
 
 #slider__image-6 {
-  background-image: url(https://img.money.com/2015/09/150929_em_monopoly.jpg);
-}
+  background-image: url(https://azurhotel.gr/wp-content/uploads/2018/07/shutterstock_215158288.jpg);
+} */
+
+
 
 .content {
   position: absolute;
@@ -460,7 +462,7 @@ nav {
   align-self: center;
   width: 16%;
   height: 100%;
-  font-size: 18px;
+  font-size: 12px;
   padding: 10px;
 }
 
@@ -514,7 +516,7 @@ nav {
   padding: 10px;
   width: 16%;
   height: 100%;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -560,7 +562,7 @@ nav {
 .contacts-container {
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .contacts {
@@ -570,6 +572,7 @@ nav {
   border: 1px solid black;
   padding: 10px;
   border-radius: 20px;
+  margin-bottom: 30px;
 }
 
 .contacts__left {
@@ -641,6 +644,26 @@ nav {
   border: none;
 }
 
+.contacts__list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contacts__link-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts__title {
+  font-size: 29px;
+  margin-bottom: 10px;
+}
+
+.container {
+  width: 80%;
+}
+
 /* Find match
 ------------------------------------*/
 
@@ -699,6 +722,12 @@ nav {
 .tournament {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.tournament__title {
+  margin-bottom: 20px;
+  font-size: 40px;
 }
 
 .tournament__list {
@@ -708,11 +737,45 @@ nav {
 
 .tournament__item {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .tournament__column {
   display: flex;
   flex-direction: column;
+  width: 20%;
+}
+
+.tournament__text {
+  font-size: 20px;
+}
+
+.tournament__button {
+  align-self: center;
+  width: 100px;
+  height: 30px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.tournament__button:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.tournament__button:hover {
+  background-color: black;
+  color: white;
 }
 
 .table-button:hover {
