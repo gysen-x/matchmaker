@@ -35,9 +35,13 @@ profileLink?.addEventListener('click', async (event) => {
   <div class="table-row__data">
      ${el.game}
    </div>
-  <div class="table-row__data">
-     ${el.date}
-   </div>
+   <div class="table-row__data">
+   ${new Date(el.date).toISOString().replace(/T/, ' ').replace(/\..+/, '')
+    .slice(5, -3)}
+   <br />
+   ${new Date(el.date_end).toISOString().replace(/T/, ' ').replace(/\..+/, '')
+    .slice(5, -3)}
+ </div>
    <div class="table-row__data">
      ${el.country}
    </div>
