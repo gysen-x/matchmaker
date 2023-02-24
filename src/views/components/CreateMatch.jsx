@@ -1,4 +1,4 @@
-const React = require("react");
+const React = require('react');
 
 module.exports = function CreateMatch({ user, sports }) {
   return (
@@ -69,13 +69,42 @@ module.exports = function CreateMatch({ user, sports }) {
               <div className="form-group">
                 <label htmlFor="country">
                   Страна:
-                  <input
-                    required=""
+                  <select
                     className="form-control"
                     name="country"
                     id="country"
-                    type="text"
-                  />
+                  >
+                    <option>
+                      Азербайджан
+                    </option>
+                    <option>
+                      Армения
+                    </option>
+                    <option>
+                      Белоруссия
+                    </option>
+                    <option>
+                      Казахстан
+                    </option>
+                    <option>
+                      Киргизия
+                    </option>
+                    <option>
+                      Молдавия
+                    </option>
+                    <option>
+                      Россия
+                    </option>
+                    <option>
+                      Таджикистан
+                    </option>
+                    <option>
+                      Узбекистан
+                    </option>
+                    <option>
+                      Азербайджан
+                    </option>
+                  </select>
                 </label>
               </div>
               <div className="form-group">
@@ -140,7 +169,7 @@ module.exports = function CreateMatch({ user, sports }) {
                   />
                 </label>
               </div>
-              <div className="form-group" style={{ display: "none" }}>
+              <div className="form-group" style={{ display: 'none' }}>
                 <label htmlFor="admin_id">
                   admin_id:
                   <input

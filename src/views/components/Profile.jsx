@@ -1,8 +1,8 @@
-const React = require("react");
+const React = require('react');
 
 module.exports = function Profile({ user }) {
   return (
-    <div className="profile-container wrapper" style={{ display: "none" }}>
+    <div className="profile-container wrapper" style={{ display: 'none' }}>
       <div className="profile-data-all">
         <h2 className="profile__title">Личный кабинет</h2>
         <input className="btn" id="editProfile" value="Изменить" />
@@ -30,7 +30,10 @@ module.exports = function Profile({ user }) {
         </div>
         <div className="profile__picture" />
       </div>
-      <div id="profile-entries" className="tableGrid" />
+      <div className="profile-entries__wrapper">
+        <h2 className="profile-entries__title">Активные матчи</h2>
+        <div id="profile-entries" className="tableGrid" />
+      </div>
     </div>
   );
 };

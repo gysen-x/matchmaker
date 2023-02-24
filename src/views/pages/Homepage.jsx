@@ -1,14 +1,14 @@
-const React = require("react");
-const CreateMatch = require("../components/CreateMatch");
-const Layout = require("../components/Layout");
-const Login = require("../components/Login");
-const Profile = require("../components/Profile");
-const Registration = require("../components/Registration");
-const Contacts = require("../components/Contacts");
-const Confirm = require("../components/Confirm");
-const Tournaments = require("../components/Tournaments");
-const EditProfile = require("../components/EditProfile");
-const Alert = require("../components/Alert");
+const React = require('react');
+const CreateMatch = require('../components/CreateMatch');
+const Layout = require('../components/Layout');
+const Login = require('../components/Login');
+const Profile = require('../components/Profile');
+const Registration = require('../components/Registration');
+const Contacts = require('../components/Contacts');
+const Confirm = require('../components/Confirm');
+const Tournaments = require('../components/Tournaments');
+const EditProfile = require('../components/EditProfile');
+const Alert = require('../components/Alert');
 
 function Homepage({ user, sports }) {
   return (
@@ -22,7 +22,7 @@ function Homepage({ user, sports }) {
           id="table_header"
           style={{
             gridTemplateColumns: `repeat(${sports.length}, 1fr)`,
-            display: "none",
+            display: 'none',
           }}
         >
           {sports?.map((sport, index) => (
@@ -37,16 +37,44 @@ function Homepage({ user, sports }) {
             </h4>
           ))}
         </div>
-        <div className="searchbar__wrapper" style={{ display: "none" }}>
+        <div className="searchbar__wrapper" style={{ display: 'none' }}>
           <div className="inputbox">
-            <input
+            <select
+              className="form-control"
               name="country"
-              required="required"
-              type="text"
-              autoComplete="off"
-            />
-            <span>Country</span>
-            <i />
+              id="country"
+            >
+              <option>
+                Азербайджан
+              </option>
+              <option>
+                Армения
+              </option>
+              <option>
+                Белоруссия
+              </option>
+              <option>
+                Казахстан
+              </option>
+              <option>
+                Киргизия
+              </option>
+              <option>
+                Молдавия
+              </option>
+              <option>
+                Россия
+              </option>
+              <option>
+                Таджикистан
+              </option>
+              <option>
+                Узбекистан
+              </option>
+              <option>
+                Азербайджан
+              </option>
+            </select>
           </div>
           <button
             className="inputbox__button"
@@ -54,18 +82,18 @@ function Homepage({ user, sports }) {
             type="button"
             data-sportid="1"
           >
-            Search
+            Поиск
           </button>
         </div>
         <div
           id="table"
           className="tableGrid"
-          style={{ gridTemplateColumns: "repeat(5, 1fr)", display: "none" }}
+          style={{ gridTemplateColumns: 'repeat(5, 1fr)', display: 'none' }}
         />
         <div
           id="currentMatchTable"
           className="tableGrid"
-          style={{ gridTemplateColumns: "repeat(5, 1fr)", display: "none" }}
+          style={{ gridTemplateColumns: 'repeat(5, 1fr)', display: 'none' }}
         />
         <div className="cd-slider">
           <ul className="slider__list">
