@@ -1,12 +1,12 @@
-const React = require('react');
-const CreateMatch = require('../components/CreateMatch');
-const Layout = require('../components/Layout');
-const Login = require('../components/Login');
-const Profile = require('../components/Profile');
-const Registration = require('../components/Registration');
-const Contacts = require('../components/Contacts');
-const Confirm = require('../components/Confirm');
-const Tournaments = require('../components/Tournaments');
+const React = require("react");
+const CreateMatch = require("../components/CreateMatch");
+const Layout = require("../components/Layout");
+const Login = require("../components/Login");
+const Profile = require("../components/Profile");
+const Registration = require("../components/Registration");
+const Contacts = require("../components/Contacts");
+const Confirm = require("../components/Confirm");
+const Tournaments = require("../components/Tournaments");
 
 function Homepage({ user, sports }) {
   return (
@@ -20,7 +20,7 @@ function Homepage({ user, sports }) {
           id="table_header"
           style={{
             gridTemplateColumns: `repeat(${sports.length}, 1fr)`,
-            display: 'none',
+            display: "none",
           }}
         >
           {sports?.map((sport, index) => (
@@ -35,25 +35,35 @@ function Homepage({ user, sports }) {
             </h4>
           ))}
         </div>
-        <div className="searchbar__wrapper" style={{ display: 'none' }}>
+        <div className="searchbar__wrapper" style={{ display: "none" }}>
           <div className="inputbox">
-            <input name="country" required="required" type="text" />
+            <input
+              name="country"
+              required="required"
+              type="text"
+              autoComplete="off"
+            />
             <span>Country</span>
             <i />
           </div>
-          <button className="inputbox__button" id="searchButton" type="button" data-sportid="1">
+          <button
+            className="inputbox__button"
+            id="searchButton"
+            type="button"
+            data-sportid="1"
+          >
             Search
           </button>
         </div>
         <div
           id="table"
           className="tableGrid"
-          style={{ gridTemplateColumns: 'repeat(5, 1fr)', display: 'none' }}
+          style={{ gridTemplateColumns: "repeat(5, 1fr)", display: "none" }}
         />
         <div
           id="currentMatchTable"
           className="tableGrid"
-          style={{ gridTemplateColumns: 'repeat(5, 1fr)', display: 'none' }}
+          style={{ gridTemplateColumns: "repeat(5, 1fr)", display: "none" }}
         />
         <div className="cd-slider">
           <ul className="slider__list">
@@ -147,7 +157,7 @@ function Homepage({ user, sports }) {
       <div id="hiddenContainer">
         <CreateMatch user={user} sports={sports} />
         {user ? (
-          ''
+          ""
         ) : (
           <>
             <Registration />

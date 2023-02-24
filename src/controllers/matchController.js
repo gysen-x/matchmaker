@@ -81,7 +81,7 @@ class MatchController {
   }
 
   async showAll(req, res) {
-    const sport_id = req.body.sport_id || 2;
+    const sport_id = req.body.sport_id || 1;
     try {
       const allMatches = await Match.findAll({
         where: { sport_id },
