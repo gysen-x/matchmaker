@@ -19,6 +19,16 @@ Matchmaker - это web-приложение как для организато�
 
 - Примененные технологии: Node.js, Express, PostgreSQL, Sequelize ORM, Bcrypt
 
+## Команда разработчиков:
+
+Frontend:
+ <img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/gysen-x
+  <img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/timiramm
+Backend:
+ <img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/Liquid1617
+ <img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/Semochkaelse
+
+
 ## Запуск приложения
 
 Для запуска приложения потребуется Postgress SQL
