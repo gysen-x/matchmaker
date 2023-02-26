@@ -21,15 +21,15 @@ Matchmaker - это web-приложение как для организато�
 
 ## Команда разработчиков:
 
-Frontend:
+### Frontend:
 <br>
 - [X] <a href="https://github.com/gysen-x">Dmitry</a>
 - [X] <a href="https://github.com/timiramm">Timir</a>
 <br>
-Backend:
+### Backend:
 <br>
-[X] <a href="https://github.com/Liquid1617">Ilya</a>
-[X] <a href="https://github.com/Semochkaelse">Semen</a>
+- [X] <a href="https://github.com/Liquid1617">Ilya</a>
+- [X] <a href="https://github.com/Semochkaelse">Semen</a>
 
 
 
