@@ -9,9 +9,9 @@ Matchmaker - это web-приложение как для организато�
 
 ## Стек:
 
-[<img align="left" alt="JavaScript" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />][git]
-[<img align="left" alt="Node.js" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" />][git]
-[<img align="left" alt="PostgreSQL" width="32px" src="https://img.icons8.com/color/50/000000/postgreesql.png"/>][git]
+[<img align="left" alt="JavaScript" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />]
+[<img align="left" alt="Node.js" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" />]
+[<img align="left" alt="PostgreSQL" width="32px" src="https://img.icons8.com/color/50/000000/postgreesql.png"/>]
 
 <br/>
 <br/>
@@ -24,7 +24,7 @@ Matchmaker - это web-приложение как для организато�
 Для запуска приложения потребуется Postgress SQL
 
  - <strong>git clone git@github.com:gysen-x/matchmaker.git</strong> - открываем терминал в нужной папке и клонируем репозиторий
- - <strong>.env example</strong> - скопируем env файл и изменяем название на <strong>'.env'</strong>
+ - <strong>.env example</strong> - копируем env файл и изменяем название на <strong>'.env'</strong>
  - <strong>.env</strong> - в данном файле изменяем DATABASE=postgres://<Ваш логин>:"<Ваш пароль>"@localhost:5432/<Имя базы>
  - <strong>npm install</strong> - установка всех зависимостей
  - <strong>npx sequelize-cli db:create</strong> - создание базы данных
