@@ -28,8 +28,8 @@ Frontend:
 <br>
 Backend:
 <br>
-- [X] <a href="https://github.com/Liquid1617">Ilya</a>
-- [X] <a href="https://github.com/Semochkaelse">Semen</a>
+[X] <a href="https://github.com/Liquid1617">Ilya</a>
+[X] <a href="https://github.com/Semochkaelse">Semen</a>
 
 
 
