@@ -38,7 +38,7 @@ Matchmaker - это web-приложение как для организато�
 
 #### На главной странице расположен блок, в котором представлены 4 категории игр
 
-<img align="center" alt="Matchmaker" src="/images/Mainpage.png" />
+<img align="center" alt="Matchmaker" src="/readme-assets/Mainpage.png" />
 
  <hr> 
  
