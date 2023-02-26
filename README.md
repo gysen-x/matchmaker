@@ -9,9 +9,9 @@ Matchmaker - это web-приложение как для организато�
 
 ## Стек:
 
-[<img align="left" alt="JavaScript" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />]
-[<img align="left" alt="Node.js" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" />]
-[<img align="left" alt="PostgreSQL" width="32px" src="https://img.icons8.com/color/50/000000/postgreesql.png"/>]
+<img align="left" alt="JavaScript" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />
+<img align="left" alt="Node.js" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" />
+<img align="left" alt="PostgreSQL" width="32px" src="https://img.icons8.com/color/50/000000/postgreesql.png"/>
 
 <br/>
 <br/>
@@ -22,11 +22,16 @@ Matchmaker - это web-приложение как для организато�
 ## Команда разработчиков:
 
 Frontend:
- <img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/gysen-x
-  <img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/timiramm
+<br>
+<img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/gysen-x
+<br>
+<img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/timiramm
+<br>
 Backend:
- <img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/Liquid1617
- <img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/Semochkaelse
+<br>
+<img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/Liquid1617
+<br>
+<img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/Semochkaelse
 
 
 ## Запуск приложения
