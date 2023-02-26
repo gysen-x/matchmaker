@@ -23,15 +23,16 @@ Matchmaker - это web-приложение как для организато�
 
 Frontend:
 <br>
-<img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/gysen-x
+<a href="https://github.com/gysen-x">Dmitry</a>
 <br>
-<img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/timiramm
+<a href="https://github.com/timiramm">Timir</a>
 <br>
 Backend:
 <br>
-<img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/Liquid1617
+<a href="https://github.com/Liquid1617">Ilya</a>
 <br>
-<img alt="coding" height="30" src="https://img.shields.io/badge/Github-355981?style=for-the-badge&logo=Github&logoColor=53B5CA">https://github.com/Semochkaelse
+<a href="https://github.com/Semochkaelse">Semen</a>
+
 
 
 ## Запуск приложения
